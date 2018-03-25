@@ -1,0 +1,39 @@
+{
+  "event": {
+    "commonEventHeader": {
+      "domain": "fault",
+      "eventId": "@eventId@",
+      "eventType": "Microwave_Radio_Alarms",
+      "functionalRole": "mmave backhaul",
+      "sequence": 0,
+      "priority": "High",
+      "reportingEntityId": "@controllerId@",
+      "reportingEntityName": "@controllerName@",
+      "sourceId": "@pnfId@",
+      "sourceName": "@pnfId@",
+      "startEpochMicrosec": "@timestamp@",
+      "lastEpochMicrosec": "@timestamp@",
+      "internalHeaderFields": {
+        "any-field-name": "any-value"
+      },
+      "version": 2.0
+    },
+    "thresholdCrossingAlertFields": {
+      "thresholdCrossingFieldsVersion": 1.1,
+      "additionalParameters": [],
+      "alertAction": "@action@",
+      "alertDescription": "TCA",
+      "alertType":"INTERFACE-ANOMALY",
+      "alertValue":"@pnfType@",
+      "associatedAlertIdList":[],
+      "collectionTimestamp": "@collectionEndTime@",
+      "dataCollector":"",
+      "elementType": "",
+      "eventSeverity":"MINOR",
+      "eventStartTimestamp":"@timestamp@",
+      "interfaceName":"@interfaceId@",
+      "networkService":"",
+      "possibleRootCause":""
+    }
+  }
+}

@@ -7,7 +7,7 @@
       "functionalRole": "mmave backhaul",
       "sequence": 0,
       "priority": "High",
-      "reportingEntityId": "cc305d54-75b4-431b-adb2-eb6b9e541234",
+      "reportingEntityId": "@pnfId@",
       "reportingEntityName": "@pnfId@",
       "sourceId": "@controllerId@",
       "sourceName": "@controllerName@",
