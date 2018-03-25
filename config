@@ -1,0 +1,15 @@
+declare -A pnfIdByType
+declare -A vendorsByType
+declare -A vendorsByType
+
+pnfIdByType=([ml6p]=LKCYFL79Q01M01MLS801 [ml20p]=MMTSIL02Q01M01ML0601 [ml6352]=NSHMRIACQ01M01ML6352 [mpr71]=PRTNILACQ01M01MP2001 [qtm]=SEDNKSAHQ01M01HQ0601 [hcp]=SNSNFLR0Q01M01HCS801)
+vendorsByType=([ml6p]=Ericsson [ml20p]=Ericsson [ml6352]=Ericsson [mpr71]=Nokia [qtm]=DragonWaveX [hcp]=DragonWaveX)
+interfaceByType=([ml6p]=LP-MWPS-RADIO [ml20p]=LP-MWPS-RADIO [ml6352]=LP-MWPS-RADIO [mpr71]=LP-MWPS-RADIO [qtm]=LP-MWPS-RADIO [hcp]=LP-MWPS-RADIO)
+
+controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
+controllerName=zltcmtn23arbc01.2f0377.mtn23a.tci.att.com
+
+aaiUrl=http://localhost:8443/aai
+basicAuthAai=AAI:AAI
+dcaeUrl=http://localhost:30000/eventListener/v3
+basicAuthVes=ves:ves

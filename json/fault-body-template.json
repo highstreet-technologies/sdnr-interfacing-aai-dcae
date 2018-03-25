@@ -1,0 +1,41 @@
+{
+  "event": {
+    "commonEventHeader": {
+      "domain": "fault",
+      "eventId": "@eventId@",
+      "eventType": "Microwave_Radio_Alarms",
+      "functionalRole": "mmave backhaul",
+      "sequence": 0,
+      "priority": "High",
+      "reportingEntityId": "cc305d54-75b4-431b-adb2-eb6b9e541234",
+      "reportingEntityName": "@pnfId@",
+      "sourceId": "@controllerId@",
+      "sourceName": "@controllerName@",
+      "startEpochMicrosec": "@timestamp@",
+      "lastEpochMicrosec": "@timestamp@",
+      "internalHeaderFields": {
+        "any-field-name": "any-value"
+      },
+      "version": 2.0
+    },
+    "faultFields": {
+      "faultFieldsVersion": 1.1,
+      "alarmCondition": "@alarmType@",
+      "alarmInterfaceA": "@interfaceId@",
+      "eventSourceType": "@pnfType@",
+      "specificProblem": "@alarmType@",
+      "eventSeverity": "@severity@",
+      "vfStatus": "Active",
+      "alarmAdditionalInformation": [
+        {
+          "name": "any-name1",
+          "value": "any-value1"
+        },
+        {
+          "name": "any-name2",
+          "value": "any-value2"
+        }
+      ]
+    }
+  }
+}
