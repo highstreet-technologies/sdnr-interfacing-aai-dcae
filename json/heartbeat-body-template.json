@@ -4,18 +4,13 @@
       "domain": "heartbeat",
       "eventId": "@eventId@",
       "eventType": "ControllerHeartbeat",
-      "functionalRole": "Controller",
       "sequence": 0,
       "priority": "Low",
       "reportingEntityId": "@controllerId@",
       "reportingEntityName": "@controllerName@",
       "sourceId": "@controllerId@",
       "sourceName": "@controllerName@",
-      "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "internalHeaderFields": {
-        "any-field-name": "any-value"
-      },
       "version": 2.0
     },
     "heartbeatFields": {
@@ -23,12 +18,8 @@
       "heartbeatInterval": 20,
       "additionalFields": [
         {
-          "name": "any-name1",
-          "value": "any-value1"
-        },
-        {
-          "name": "any-name2",
-          "value": "any-value2"
+          "name": "eventTime",
+          "value": "@eventTime@"
         }
       ]
     }
