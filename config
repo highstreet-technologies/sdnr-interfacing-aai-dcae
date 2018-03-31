@@ -1,15 +1,59 @@
-declare -A pnfIdByType
-declare -A vendorsByType
-declare -A vendorsByType
+################################################################################
+# Configuration for interface tests 
+# from SDN-R to DCAE and A&AI
 
-pnfIdByType=([ml6p]=LKCYFL79Q01M01MLS801 [ml20p]=MMTSIL02Q01M01ML0601 [ml6352]=NSHMRIACQ01M01ML6352 [mpr71]=PRTNILACQ01M01MP2001 [qtm]=SEDNKSAHQ01M01HQ0601 [hcp]=SNSNFLR0Q01M01HCS801)
-vendorsByType=([ml6p]=Ericsson [ml20p]=Ericsson [ml6352]=Ericsson [mpr71]=Nokia [qtm]=DragonWaveX [hcp]=DragonWaveX)
-interfaceByType=([ml6p]=LP-MWPS-RADIO [ml20p]=LP-MWPS-RADIO [ml6352]=LP-MWPS-RADIO [mpr71]=LP-MWPS-RADIO [qtm]=LP-MWPS-RADIO [hcp]=LP-MWPS-RADIO)
-
+################################################################################
+# SDN-R identifier and FQDN 
 controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
 controllerName=zltcmtn23arbc01.2f0377.mtn23a.tci.att.com
 
-aaiUrl=http://localhost:8443/aai
+################################################################################
+# A&AI communcation end point 
+urlAai=http://localhost:8443/aai
 basicAuthAai=AAI:AAI
-dcaeUrl=http://localhost:30000/eventListener/v3
+
+################################################################################
+# DCAE VES Collector communcation end point 
+urlVes=http://localhost:8443/eventListener/v3
 basicAuthVes=ves:ves
+
+################################################################################
+# Infomration from document: 295672 SDN-R System Requirements
+#
+# a. Ericsson   6352    HighCap  (6352)
+# b. Ericsson   MLTN    6P       (MP06)
+# c. Ericsson   MLTN    20P      (MP20)
+# d. Nokia      9500MPR          (MSS8)
+# e. Dragonwave Horizon Quantum  (DWHQ)
+# f. Dragonwave Horizon Compact+ (DWHC)
+
+declare -A pnfIdByType;
+declare -A vendorsByType;
+declare -A vendorsByType;
+
+pnfIdByType=(
+    [6352]=NSHMRIACQ01M01635201 
+    [mp06]=LKCYFL79Q01M01MP0601 
+    [mp20]=MMTSIL02Q01M01MP2001 
+    [mss8]=PRTNILACQ01M01MSS801 
+    [dwhq]=SEDNKSAHQ01M01DWHQ01 
+    [dwhc]=SNSNFLR0Q01M01DWHC01
+);
+
+vendorsByType=(
+    [6352]=Ericsson 
+    [mp06]=Ericsson 
+    [mp20]=Ericsson 
+    [mss8]=Nokia 
+    [dwhq]=DragonWaveX 
+    [dwhc]=DragonWaveX
+);
+
+interfaceByType=(
+    [6352]=LP-MWPS-RADIO 
+    [mp06]=LP-MWPS-RADIO 
+    [mp20]=LP-MWPS-RADIO 
+    [mss8]=LP-MWPS-RADIO 
+    [dwhq]=LP-MWPS-RADIO 
+    [dwhc]=LP-MWPS-RADIO
+)
