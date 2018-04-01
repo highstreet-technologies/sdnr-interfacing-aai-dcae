@@ -1,4 +1,1 @@
-json/fault-body.json
-json/heartbeat-body.json
-json/tca-body.json
-json/measurement-body.json
+json/*-body.json
