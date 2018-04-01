@@ -8,6 +8,8 @@ eventId=$(uuidgen)
 
 sed -e "s/@pnfId@/${pnfIdByType[$pnfType]}/g; s/@eventId@/${eventId}/g; s/@controllerId@/${controllerId}/g; s/@controllerName@/${controllerName}/g; s/@pnfType@/${pnfType}/g; s/@interfaceId@/${interfaceByType[$pnfType]}/g; s/@alarmType@/${alarmType}/g; s/@severity@/${severity}/g; s/\"@timestamp@\"/$(($(date -u +%s%N)/1000000))/g; " ./json/measurement-body-template.json > ./json/measurement-body.json
 
+echo "################################################################################";
+echo "# send 15min performance monitoring";
 echo
 echo "  controllerId: ${controllerId}"
 echo "controllerName: ${controllerName}"
@@ -23,4 +25,4 @@ echo
 # echo "     body: $json"
 # echo
 
-curl -i -u $basicAuthVes -X POST -d  @json/measurement-body.json --header "Content-Type: application/json" $dcaeUrl
+curl -i -u $basicAuthVes -X POST -d  @json/measurement-body.json --header "Content-Type: application/json" $urlVes

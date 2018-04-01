@@ -10,7 +10,7 @@ collectionEndTime=$(date -u -R -d @$time15 );
           pnfType=${1,,};
         alarmType=$2;
            action=$3;
-           
+
 declare -A severities=(
     [clear]=NORMAL
     [cont]=WARNING
@@ -18,8 +18,6 @@ declare -A severities=(
 )
          severity=${severities[${3,,}]};
     alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
-           spaces="                 ";
-         sequence=;
 . config;
 
 
@@ -40,7 +38,9 @@ declare -A mapping=(
     [vendor]=${vendorsByType[$pnfType]}
 )
 
-echo;
+echo "################################################################################";
+echo "# send threshold crossed alert";
+echo
 for key in "${!mapping[@]}"
 do
   label=$spaces$key;

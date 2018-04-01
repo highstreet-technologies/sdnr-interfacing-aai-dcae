@@ -5,8 +5,6 @@
    timestamp=$(date -u +%s%3N);
    eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
      eventId=$(uuidgen);
-       spaces="                ";
-     sequence=;
 . config;
 
 declare -A mapping=(
@@ -17,6 +15,8 @@ declare -A mapping=(
     [eventTime]=${eventTime}
 )
 
+echo "################################################################################";
+echo "# send SDN-R hardbeat";
 echo;
 for key in "${!mapping[@]}"
 do
@@ -34,4 +34,4 @@ sed -e "$sequence" ./json/heartbeat-body-template.json > ./json/heartbeat-body.j
 # echo "     body: $json"
 # echo
 
-curl -i -u $basicAuthVes -X POST -d  @json/heartbeat-body.json --header "Content-Type: application/json" $urlVes
+curl -i -u $basicAuthVes -d @json/heartbeat-body.json --header "Content-Type: application/json" $urlVes

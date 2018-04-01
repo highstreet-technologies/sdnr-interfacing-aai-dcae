@@ -14,7 +14,7 @@ declare -A mapping=(
 )
 
 echo "################################################################################";
-echo "# create or update PNF in A%AI";
+echo "# create or update PNF in A&AI";
 echo
 for key in "${!mapping[@]}"
 do

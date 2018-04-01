@@ -9,8 +9,6 @@
     alarmType=$2;
      severity=$3;
 alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
-       spaces="                ";
-     sequence=;
 . config;
 
 declare -A mapping=(
@@ -28,6 +26,8 @@ declare -A mapping=(
     [vendor]=${vendorsByType[$pnfType]}
 )
 
+echo "################################################################################";
+echo "# send fault";
 echo;
 for key in "${!mapping[@]}"
 do
@@ -45,4 +45,4 @@ sed -e "$sequence" ./json/fault-body-template.json > ./json/fault-body.json
 # echo "     body: $json"
 # echo
 
-curl -i -u $basicAuthVes -X POST -d  @json/fault-body.json --header "Content-Type: application/json" $urlVes
+curl -i -u $basicAuthVes -X POST -d @json/fault-body.json --header "Content-Type: application/json" $urlVes
