@@ -1,28 +1,59 @@
 #!/bin/bash
+################################################################################
+# Script to send an VES Message Event to DCAE
 
-pnfType=$1
-action=$2
-eventId=$(uuidgen)
-. config
+        timestamp=$(date -u +%s%3N);
+        eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
+           time15=$(( $(date -u +%s) - $(($(date -u +%s) % 900))));
+collectionEndTime=$(date -u -R -d @$time15 );
+          eventId=$(uuidgen);
+          pnfType=${1,,};
+        alarmType=$2;
+           action=$3;
+           
+declare -A severities=(
+    [clear]=NORMAL
+    [cont]=WARNING
+    [set]=WARNING
+)
+         severity=${severities[${3,,}]};
+    alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
+           spaces="                 ";
+         sequence=;
+. config;
 
-// dt=$(date -u '+%d/%m/%Y %H:%M:%S');
 
-sed -e "s/@pnfId@/${pnfIdByType[$pnfType]}/g; s/@eventId@/${eventId}/g; s/@controllerId@/${controllerId}/g; s/@controllerName@/${controllerName}/g; s/@pnfType@/${pnfType}/g; s/@interfaceId@/${interfaceByType[$pnfType]}/g; s/@action@/${action}/g; s/\"@timestamp@\"/$(($(date -u +%s%N)/1000000))/g; s/@collectionEndTime@/${collectionEndTime}/g;  " ./json/tca-body-template.json > ./json/tca-body.json
+declare -A mapping=(
+    [controllerId]=${controllerId}
+    [controllerName]=${controllerName}
+    [pnfId]=${pnfIdByType[$pnfType]}
+    [eventId]=${eventId}
+    [alarmInstance]=${alarmInstance}
+    [type]=${pnfType^^}
+    [interface]=${interfaceByType[$pnfType]}
+    [alarm]=${alarmType}
+    [action]=${action}
+    [severity]=${severity}
+    [timestamp]=${timestamp}
+    [eventTime]=${eventTime}
+    [collectionEndTime]=${collectionEndTime}
+    [vendor]=${vendorsByType[$pnfType]}
+)
 
-echo
-echo "     controllerId: ${controllerId}"
-echo "   controllerName: ${controllerName}"
-echo "            pnfId: ${pnfIdByType[$pnfType]}"
-echo "             type: ${pnfType}"
-echo "           vendor: ${vendorsByType[$pnfType]}"
-echo "        interface: ${interfaceByType[$pnfType]}"
-echo "           action: ${action}"
-echo "        timestamp: $(($(date -u +%s%N)/1000000))"
-echo "collectionEndTime: $(date -u)"
-echo "          eventId: ${eventId}"
-echo 
+echo;
+for key in "${!mapping[@]}"
+do
+  label=$spaces$key;
+  label=${label:(-17)};
+  echo "$label: ${mapping[$key]}";
+  sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+done
+echo;
+
+sed -e "$sequence" ./json/tca-body-template.json > ./json/tca-body.json
+
 # json=$(< ./json/tca-body.json)
 # echo "     body: $json"
 # echo
 
-curl -i -u $basicAuthVes -X POST -d  @json/tca-body.json --header "Content-Type: application/json" $dcaeUrl
+curl -i -u $basicAuthVes -X POST -d  @json/tca-body.json --header "Content-Type: application/json" $urlVes

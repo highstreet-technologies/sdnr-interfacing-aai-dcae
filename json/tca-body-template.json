@@ -1,20 +1,16 @@
 {
   "event": {
     "commonEventHeader": {
-      "domain": "fault",
+      "domain": "thresholdCrossingAlert",
       "eventId": "@eventId@",
-      "eventType": "Microwave_Radio_Alarms",
-      "functionalRole": "mmave backhaul",
+      "eventType": "Microwave_TCA",
       "sequence": 0,
       "priority": "High",
-      "reportingEntityId": "@controllerId@",
-      "reportingEntityName": "@controllerName@",
-      "sourceId": "@pnfId@",
+      "reportingEntityName": "@pnfId@",
       "sourceName": "@pnfId@",
-      "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
       "internalHeaderFields": {
-        "any-field-name": "any-value"
+        "alarmInstance": "@alarmInstance@"
       },
       "version": 2.0
     },
@@ -23,15 +19,15 @@
       "additionalParameters": [],
       "alertAction": "@action@",
       "alertDescription": "TCA",
-      "alertType":"INTERFACE-ANOMALY",
-      "alertValue":"@pnfType@",
+      "alertType":"@alarm@",
+      "alertValue":"@type@",
       "associatedAlertIdList":[],
       "collectionTimestamp": "@collectionEndTime@",
       "dataCollector":"",
-      "elementType": "",
-      "eventSeverity":"MINOR",
+      "elementType": "@type@",
+      "eventSeverity":"@severity@",
       "eventStartTimestamp":"@timestamp@",
-      "interfaceName":"@interfaceId@",
+      "interfaceName":"@interface@",
       "networkService":"",
       "possibleRootCause":""
     }
