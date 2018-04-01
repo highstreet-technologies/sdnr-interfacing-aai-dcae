@@ -3,7 +3,7 @@
     "commonEventHeader": {
       "domain": "fault",
       "eventId": "@eventId@",
-      "eventType": "Microwave_Radio_Alarms",
+      "eventName": "Microwave_Radio_Alarms",
       "functionalRole": "mmave backhaul",
       "sequence": 0,
       "priority": "High",

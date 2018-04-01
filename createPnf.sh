@@ -19,7 +19,7 @@ echo
 for key in "${!mapping[@]}"
 do
   label=$spaces$key;
-  label=${label:(-17)};
+  label=${label:(-20)};
   echo "$label: ${mapping[$key]}";
   sequence="$sequence s/@$key@/${mapping[$key]}/g; "
 done

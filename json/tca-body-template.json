@@ -3,11 +3,12 @@
     "commonEventHeader": {
       "domain": "thresholdCrossingAlert",
       "eventId": "@eventId@",
-      "eventType": "Microwave_TCA",
+      "eventName": "Microwave_TCA",
       "sequence": 0,
       "priority": "High",
       "reportingEntityName": "@pnfId@",
       "sourceName": "@pnfId@",
+      "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
       "internalHeaderFields": {
         "alarmInstance": "@alarmInstance@"
@@ -19,14 +20,14 @@
       "additionalParameters": [],
       "alertAction": "@action@",
       "alertDescription": "TCA",
-      "alertType":"@alarm@",
+      "alertType":"INTERFACE-ANOMALY",
       "alertValue":"@type@",
       "associatedAlertIdList":[],
       "collectionTimestamp": "@collectionEndTime@",
       "dataCollector":"",
       "elementType": "@type@",
       "eventSeverity":"@severity@",
-      "eventStartTimestamp":"@timestamp@",
+      "eventStartTimestamp":"@eventStartTimestamp@",
       "interfaceName":"@interface@",
       "networkService":"",
       "possibleRootCause":""

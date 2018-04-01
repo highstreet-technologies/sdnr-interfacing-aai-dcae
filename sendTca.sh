@@ -2,14 +2,16 @@
 ################################################################################
 # Script to send an VES Message Event to DCAE
 
-        timestamp=$(date -u +%s%3N);
-        eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
-           time15=$(( $(date -u +%s) - $(($(date -u +%s) % 900))));
-collectionEndTime=$(date -u -R -d @$time15 );
-          eventId=$(uuidgen);
-          pnfType=${1,,};
-        alarmType=$2;
-           action=$3;
+          timestamp=$(date -u +%s%3N);
+            timeInS=${timestamp:0:$((${#timestamp}-3))};
+          eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
+  collectionEndTime=$(date -u -R -d @$timeInS );:
+          time15min=$(( $(date -u +%s) - $(($(date -u +%s) % 900))));
+eventStartTimestamp=$(date -u -R -d @$time15min );
+            eventId=$(uuidgen);
+            pnfType=${1,,};
+          alarmType=$2;
+             action=$3;
 
 declare -A severities=(
     [clear]=NORMAL
@@ -35,6 +37,7 @@ declare -A mapping=(
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}
     [collectionEndTime]=${collectionEndTime}
+    [eventStartTimestamp]=${eventStartTimestamp}
     [vendor]=${vendorsByType[$pnfType]}
 )
 
@@ -44,9 +47,13 @@ echo
 for key in "${!mapping[@]}"
 do
   label=$spaces$key;
-  label=${label:(-17)};
+  label=${label:(-20)};
   echo "$label: ${mapping[$key]}";
-  sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  if [ $key = "timestamp" ]; then
+      sequence="$sequence s/\"@$key@\"/${mapping[$key]}/g; "
+  else
+      sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  fi  
 done
 echo;
 

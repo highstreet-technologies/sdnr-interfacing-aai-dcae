@@ -3,13 +3,14 @@
     "commonEventHeader": {
       "domain": "heartbeat",
       "eventId": "@eventId@",
-      "eventType": "ControllerHeartbeat",
+      "eventName": "ControllerHeartbeat",
       "sequence": 0,
       "priority": "Low",
       "reportingEntityId": "@controllerId@",
       "reportingEntityName": "@controllerName@",
       "sourceId": "@controllerId@",
       "sourceName": "@controllerName@",
+      "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
       "version": 2.0
     },

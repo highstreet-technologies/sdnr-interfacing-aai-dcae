@@ -35,7 +35,11 @@ do
   label=$spaces$key;
   label=${label:(-16)};
   echo "$label: ${mapping[$key]}";
-  sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  if [ $key = "timestamp" ]; then
+      sequence="$sequence s/\"@$key@\"/${mapping[$key]}/g; "
+  else
+      sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  fi  
 done
 echo;
 
