@@ -1,0 +1,9 @@
+{
+    "pnf-name": "@pnfId@",
+    "pnf-id": "@pnfId@",
+    "equip-type": "@type@",
+    "equip-model": "@model@",
+    "equip-vendor": "@vendor@",
+    "ipaddress-v4-oam": "@oamIp@",
+    "in-maint": true
+}

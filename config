@@ -6,10 +6,13 @@
 # SDN-R identifier and FQDN 
 controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
 controllerName=zltcmtn23arbc01.2f0377.mtn23a.tci.att.com
+spaces="                 ";
+sequence=;
+
 
 ################################################################################
 # A&AI communcation end point 
-urlAai=http://localhost:8443/aai
+urlAai=http://localhost:8447/aai
 basicAuthAai=AAI:AAI
 
 ################################################################################
@@ -28,8 +31,10 @@ basicAuthVes=ves:ves
 # f. Dragonwave Horizon Compact+ (DWHC)
 
 declare -A pnfIdByType;
+declare -A modelByType;
+declare -A oamIpByType;
 declare -A vendorsByType;
-declare -A vendorsByType;
+declare -A interfaceByType;
 
 pnfIdByType=(
     [6352]=NSHMRIACQ01M01635201 
@@ -38,6 +43,24 @@ pnfIdByType=(
     [mss8]=PRTNILACQ01M01MSS801 
     [dwhq]=SEDNKSAHQ01M01DWHQ01 
     [dwhc]=SNSNFLR0Q01M01DWHC01
+);
+
+modelByType=(
+    [6352]="MINI-LINK 6352" 
+    [mp06]="MINI-LINK TN 6P" 
+    [mp20]="MINI-LINK TN 20P" 
+    [mss8]="9500MPR" 
+    [dwhq]="Horizon Quantum" 
+    [dwhc]="Horizon Compact+"
+);
+
+oamIpByType=(
+    [6352]=10.10.10.11 
+    [mp06]=10.10.10.12 
+    [mp20]=10.10.10.13 
+    [mss8]=10.10.10.14 
+    [dwhq]=10.10.10.15 
+    [dwhc]=10.10.10.16
 );
 
 vendorsByType=(
