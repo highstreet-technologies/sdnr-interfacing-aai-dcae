@@ -6,8 +6,6 @@
 # SDN-R identifier and FQDN 
 controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
 controllerName=zltcmtn23arbc01.2f0377.mtn23a.tci.att.com
-spaces="                   ";
-sequence=;
 
 ################################################################################
 # A&AI communcation end point 
@@ -79,3 +77,6 @@ interfaceByType=(
     [dwhq]=LP-MWPS-RADIO 
     [dwhc]=LP-MWPS-RADIO
 )
+
+spaces="                   ";
+sequence=;
