@@ -3,8 +3,8 @@
 # Script to demo interface tests
 
 ################################################################################
-# send SDN-R hardbeat
-./sendHardbeat.sh
+# send SDN-R heartbeat
+./sendHeartbeat.sh
 
 ################################################################################
 # create/update PNF in A%AI
