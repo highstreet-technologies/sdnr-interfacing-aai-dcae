@@ -16,7 +16,7 @@ declare -A mapping=(
 )
 
 echo "################################################################################";
-echo "# send SDN-R hardbeat";
+echo "# send SDN-R heartbeat";
 echo;
 for key in "${!mapping[@]}"
 do
@@ -24,7 +24,11 @@ do
   label=$spaces$key;
   label=${label:(-16)};
   echo "$label: ${mapping[$key]}";
-  sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  if [ $key = "timestamp" ]; then
+      sequence="$sequence s/\"@$key@\"/${mapping[$key]}/g; "
+  else
+      sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  fi  
 done
 echo;
 
