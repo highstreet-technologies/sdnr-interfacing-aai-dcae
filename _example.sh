@@ -8,12 +8,12 @@
 
 ################################################################################
 # create/update PNF in A%AI
-./createPnf.sh 6352 lossOfSignal CRITICAL
-./createPnf.sh MP06 TCA MAJOR
-./createPnf.sh MP20 TCA MINOR
-./createPnf.sh MSS8 signalIsLost CRITICAL
-./createPnf.sh DWHQ LossOfSignalAlarm CRITICAL
-./createPnf.sh DWHC HAAMRunningInLowerModulation MAJOR
+./createPnf.sh 6352
+./createPnf.sh MP06
+./createPnf.sh MP20
+./createPnf.sh MSS8
+./createPnf.sh DWHQ
+./createPnf.sh DWHC
 
 ################################################################################
 # raise fault
