@@ -3,9 +3,8 @@
 # from SDN-R to DCAE and A&AI
 
 ################################################################################
-# SDN-R identifier and FQDN 
+# SDN-R identifier (how to generate from FQDN in bash?)
 controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
-controllerName=$(host -TtA $(hostname -s) | grep "has address" | awk '{print $1}'); if [[ "${controllerName}" == "" ]]; then controllerName=$(hostname -s); fi;
 
 ################################################################################
 # A&AI communcation end point 

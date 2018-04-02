@@ -13,7 +13,7 @@ alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
 
 declare -A mapping=(
     [controllerId]=${controllerId}
-    [controllerName]=${controllerName}
+    [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
     [eventId]=${eventId}
     [alarmInstance]=${alarmInstance}
