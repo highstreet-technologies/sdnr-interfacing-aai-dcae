@@ -52,5 +52,10 @@
 ./sendTca.sh DWHC TCA CLEAR
 
 ################################################################################
-# send 15min performance measuarment data
-# to be done for 1810 ...
+# send 15min performance measurement data
+./send15minPm.sh 6352
+./send15minPm.sh MP06
+./send15minPm.sh MP20
+./send15minPm.sh MSS8
+./send15minPm.sh DWHQ
+./send15minPm.sh DWHC

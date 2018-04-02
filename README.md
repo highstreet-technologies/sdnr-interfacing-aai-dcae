@@ -92,6 +92,4 @@ The following example show the usage of this script. The TCA with name "TCA" for
 
 ### send15minPm
 
-This script is under contruction for 1810. 
-Please dont use it. It is not tested and everything make happen ;).
-
+This script send a VES message of domain "measurementsForVfScaling" to DCAE. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQm, DWHC] according to document "295672 SDN-R System Requirements".
