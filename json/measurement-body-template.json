@@ -1,39 +1,99 @@
 {
   "event": {
     "commonEventHeader": {
-      "domain": "fault",
+      "domain": "measurementsForVfScaling",
       "eventId": "@eventId@",
-      "eventName": "Microwave_Radio_Alarms",
-      "functionalRole": "mmave backhaul",
+      "eventName": "Microwave_Radio_Performance_Measurement",
       "sequence": 0,
-      "priority": "High",
-      "reportingEntityId": "cc305d54-75b4-431b-adb2-eb6b9e541234",
+      "priority": "Low",
       "reportingEntityName": "@pnfId@",
-      "sourceId": "de305d54-75b4-431b-adb2-eb6b9e546014",
       "sourceName": "@pnfId@",
-      "startEpochMicrosec": "@timestamp@",
-      "lastEpochMicrosec": "@timestamp@",
+      "startEpochMicrosec": "@collectionStartTime@",
+      "lastEpochMicrosec": "@collectionEndTime@",
       "internalHeaderFields": {
-        "any-field-name": "any-value"
+        "intervalStartTime": "@intervalStartTime@",
+        "intervalEndTime": "@intervalEndTime@"
       },
       "version": 2.0
     },
-    "faultFields": {
-      "faultFieldsVersion": 1.1,
-      "alarmCondition": "@alarmType@",
-      "alarmInterfaceA": "@interfaceId@",
-      "eventSourceType": "@pnfType@",
-      "specificProblem": "@alarmType@",
-      "eventSeverity": "@severity@",
-      "vfStatus": "Active",
-      "alarmAdditionalInformation": [
+    "measurementsForVfScalingFields": {
+      "measurementsForVfScalingVersion": 2.0,
+      "additionalMeasurements": [
         {
-          "name": "any-name1",
-          "value": "any-value1"
+          "name": "@interface@-1",
+          "arrayOfFields": [
+            {
+              "name": "es",
+              "value": "0"
+            },
+            {
+              "name": "ses",
+              "value": "1"
+            },
+            {
+              "name": "cses",
+              "value": "0"
+            },
+            {
+              "name": "unavailability",
+              "value": "0"
+            }
+          ]
         },
         {
-          "name": "any-name2",
-          "value": "any-value2"
+          "name": "@interface@-2",
+          "arrayOfFields": [
+            {
+              "name": "es",
+              "value": "0"
+            },
+            {
+              "name": "ses",
+              "value": "1"
+            },
+            {
+              "name": "cses",
+              "value": "0"
+            },
+            {
+              "name": "unavailability",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "additionalObjects": [],
+      "codecUsageArray": [],
+      "concurrentSessions": 0,
+      "configuredEntities": 0,
+      "cpuUsageArray": [],
+      "diskUsageArray": [],
+      "featureUsageArray": [],
+      "filesystemUsageArray": [],
+      "latencyDistribution": [],
+      "meanRequestLatency": 0,
+      "measurementInterval": 900,
+      "memoryUsageArray": [],
+      "numberOfMediaPortsInUse": 2,
+      "requestRate": 0,
+      "vnfcScalingMetric": 0,
+      "vNicPerformanceArray": [],
+      "additionalFields": [
+        {
+          "name": "intervalStartTime",
+          "value": "@intervalStartTime@"
+        },
+        {
+          "name": "intervalEndTime",
+          "value": "@intervalEndTime@"
+        },
+        {
+          "name": "vendor",
+          "value": "@vendor@"
+        },
+        {
+          "name": "model",
+          "value": "@model@"
         }
       ]
     }

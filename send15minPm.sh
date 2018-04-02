@@ -1,26 +1,55 @@
 #!/bin/bash
+################################################################################
+# Script to send an VES Message Event to DCAE
 
-pnfType=$1
-alarmType=$2
-severity=$3
-eventId=$(uuidgen)
-. config
+          timestamp=$(date -u +%s%3N);
+            timeInS=${timestamp:0:$((${#timestamp}-3))};
+             timeMs=${timestamp:(-3)};
+          eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
+   
+   collectionEndTime=$(( $(date -u +%s) - $(($(date -u +%s) % 900))));
+ collectionStartTime=$(( collectionEndTime - 900 ));
 
-sed -e "s/@pnfId@/${pnfIdByType[$pnfType]}/g; s/@eventId@/${eventId}/g; s/@controllerId@/${controllerId}/g; s/@controllerName@/${controllerName}/g; s/@pnfType@/${pnfType}/g; s/@interfaceId@/${interfaceByType[$pnfType]}/g; s/@alarmType@/${alarmType}/g; s/@severity@/${severity}/g; s/\"@timestamp@\"/$(($(date -u +%s%N)/1000000))/g; " ./json/measurement-body-template.json > ./json/measurement-body.json
+            eventId=$(uuidgen);
+            pnfType=${1,,};
+. config;
+
+
+declare -A mapping=(
+    [controllerId]=${controllerId}
+    [controllerName]=$(hostname --fqdn)
+    [pnfId]=${pnfIdByType[$pnfType]}
+    [eventId]=${eventId}
+    [type]=${pnfType^^}
+    [interface]=${interfaceByType[$pnfType]}
+    [timestamp]=${timestamp}
+    [eventTime]=${eventTime}
+    [collectionStartTime]=${collectionStartTime}000
+    [collectionEndTime]=${collectionEndTime}000
+    [intervalStartTime]=$(date -u -R -d @$collectionStartTime )
+    [intervalEndTime]=$(date -u -R -d @$collectionEndTime )
+    [vendor]=${vendorsByType[$pnfType]}
+    [model]=${modelByType[$pnfType]}
+)
 
 echo "################################################################################";
-echo "# send 15min performance monitoring";
+echo "# send 15min performance values";
 echo
-echo "  controllerId: ${controllerId}"
-echo "controllerName: ${controllerName}"
-echo "         pnfId: ${pnfIdByType[$pnfType]}"
-echo "          type: ${pnfType}"
-echo "        vendor: ${vendorsByType[$pnfType]}"
-echo "     interface: ${interfaceByType[$pnfType]}"
-echo "         alarm: ${alarmType}"
-echo "     timestamp: $(($(date -u +%s%N)/1000000))"
-echo "       eventId: ${eventId}"
-echo 
+for key in "${!mapping[@]}"
+do
+  label=$spaces$key;
+  label=${label:(-20)};
+  echo "$label: ${mapping[$key]}";
+  if [ $key = "collectionStartTime" ] || [ $key = "collectionEndTime" ]; then
+      sequence="$sequence s/\"@$key@\"/${mapping[$key]}/g; "
+  else
+      sequence="$sequence s/@$key@/${mapping[$key]}/g; "
+  fi  
+done
+echo;
+
+sed -e "$sequence" ./json/measurement-body-template.json > ./json/measurement-body.json
+
 # json=$(< ./json/measurement-body.json)
 # echo "     body: $json"
 # echo
