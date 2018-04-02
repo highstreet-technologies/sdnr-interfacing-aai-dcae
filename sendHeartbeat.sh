@@ -2,14 +2,11 @@
 ################################################################################
 # Script to send an VES Message Event to DCAE
 
-   timestamp=$(date -u +%s%3N);
-   eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
-     eventId=$(uuidgen);
 . config;
 
 declare -A mapping=(
     [controllerId]=${controllerId}
-    [controllerName]=${controllerName}
+    [controllerName]=$(hostname --fqdn)
     [eventId]=${eventId}
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}

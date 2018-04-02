@@ -88,6 +88,10 @@
           "value": "@intervalEndTime@"
         },
         {
+            "name": "eventTime",
+            "value": "@eventTime@"
+        },
+        {
           "name": "vendor",
           "value": "@vendor@"
         },

@@ -23,14 +23,28 @@
       "alertType":"INTERFACE-ANOMALY",
       "alertValue":"@type@",
       "associatedAlertIdList":[],
-      "collectionTimestamp": "@collectionEndTime@",
+      "collectionTimestamp": "@collectionTimestamp@",
       "dataCollector":"",
       "elementType": "@type@",
       "eventSeverity":"@severity@",
       "eventStartTimestamp":"@eventStartTimestamp@",
       "interfaceName":"@interface@",
       "networkService":"",
-      "possibleRootCause":""
+      "possibleRootCause":"",
+      "additionalFields": [
+        {
+          "name": "eventTime",
+          "value": "@eventTime@"
+        },
+        {
+          "name": "vendor",
+          "value": "@vendor@"
+        },
+        {
+          "name": "model",
+          "value": "@model@"
+        }
+      ]
     }
   }
 }

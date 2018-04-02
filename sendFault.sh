@@ -2,14 +2,11 @@
 ################################################################################
 # Script to send an VES Message Event to DCAE
 
-   timestamp=$(date -u +%s%3N);
-   eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
-     eventId=$(uuidgen);
+. config;
      pnfType=${1,,};
     alarmType=$2;
      severity=$3;
 alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
-. config;
 
 declare -A mapping=(
     [controllerId]=${controllerId}
@@ -24,6 +21,7 @@ declare -A mapping=(
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}
     [vendor]=${vendorsByType[$pnfType]}
+    [model]=${modelByType[$pnfType]}
 )
 
 echo "################################################################################";

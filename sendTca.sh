@@ -2,16 +2,13 @@
 ################################################################################
 # Script to send an VES Message Event to DCAE
 
-          timestamp=$(date -u +%s%3N);
-            timeInS=${timestamp:0:$((${#timestamp}-3))};
-          eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
-  collectionEndTime=$(date -u -R -d @$timeInS );:
-          time15min=$(( $(date -u +%s) - $(($(date -u +%s) % 900))));
-eventStartTimestamp=$(date -u -R -d @$time15min );
-            eventId=$(uuidgen);
+. config;
             pnfType=${1,,};
           alarmType=$2;
              action=$3;
+collectionTimestamp=$(date -u -R -d @$timeInS );:
+          time15min=$(( $timeInS - $(($timeInS % 900))));
+eventStartTimestamp=$(date -u -R -d @$time15min );
 
 declare -A severities=(
     [clear]=NORMAL
@@ -20,7 +17,6 @@ declare -A severities=(
 )
          severity=${severities[${3,,}]};
     alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
-. config;
 
 
 declare -A mapping=(
@@ -36,9 +32,10 @@ declare -A mapping=(
     [severity]=${severity}
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}
-    [collectionEndTime]=${collectionEndTime}
+    [collectionTimestamp]=${collectionTimestamp}
     [eventStartTimestamp]=${eventStartTimestamp}
     [vendor]=${vendorsByType[$pnfType]}
+    [model]=${modelByType[$pnfType]}
 )
 
 echo "################################################################################";

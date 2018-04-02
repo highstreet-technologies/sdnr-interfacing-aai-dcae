@@ -1,19 +1,11 @@
 #!/bin/bash
 ################################################################################
 # Script to send an VES Message Event to DCAE
-
-          timestamp=$(date -u +%s%3N);
-            timeInS=${timestamp:0:$((${#timestamp}-3))};
-             timeMs=${timestamp:(-3)};
-          eventTime=$(date -u -d @${timestamp:0:$((${#timestamp}-3))} +'%Y-%m-%dT%H:%M:%S').${timestamp:(-3)}" UTC";
    
-   collectionEndTime=$(( $(date -u +%s) - $(($(date -u +%s) % 900))));
- collectionStartTime=$(( collectionEndTime - 900 ));
-
-            eventId=$(uuidgen);
-            pnfType=${1,,};
 . config;
-
+            pnfType=${1,,};
+   collectionEndTime=$(( $timeInS - $(($timeInS % 900))));
+ collectionStartTime=$(( collectionEndTime - 900 ));
 
 declare -A mapping=(
     [controllerId]=${controllerId}

@@ -17,6 +17,14 @@ urlVes=http://localhost:8443/eventListener/v3
 basicAuthVes=ves:ves
 
 ################################################################################
+# common generated event settings, please dont touch
+timestamp=$(date -u +%s%3N)
+timeInS=${timestamp:0:$((${#timestamp}-3))}
+timeMs=${timestamp:(-3)}
+eventTime=$(date -u -d @$timeInS +'%Y-%m-%dT%H:%M:%S').$timeMs"Z"
+eventId=$(uuidgen)
+
+################################################################################
 # Infomration from document: 295672 SDN-R System Requirements
 #
 # a. Ericsson   6352    HighCap  (6352)
