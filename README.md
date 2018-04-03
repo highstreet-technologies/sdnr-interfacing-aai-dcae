@@ -21,7 +21,6 @@ Please update the varables in [config](-/config) accordintly to the test envirom
 
 ```
 controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
-controllerName=zltcmtn23arbc01.2f0377.mtn23a.tci.att.com
 urlAai=http://localhost:8447/aai
 basicAuthAai=AAI:AAI
 urlVes=http://localhost:8443/eventListener/v3
@@ -33,7 +32,7 @@ basicAuthVes=ves:ves
 Several tests scripts are avialable in the root of this project. 
 The bash scripts will perform a cURL command to send a REST request to the A&AI or DCAE server.
 
-![SDN-R NBIs](./images/sdnr-nbis.png "SDN-R NBIs")
+![SDN-R NBIs](images/sndr-nbis.png =250x100)
 
 ## Scripts
 
