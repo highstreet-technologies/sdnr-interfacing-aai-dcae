@@ -33,6 +33,8 @@ basicAuthVes=ves:ves
 Several tests scripts are avialable in the root of this project. 
 The bash scripts will perform a cURL command to send a REST request to the A&AI or DCAE server.
 
+![SDN-R NBIs](./images/sdnr-nbis.png "SDN-R NBIs")
+
 ## Scripts
 
 This chapter descibes the several test scripts its usage and functions.
