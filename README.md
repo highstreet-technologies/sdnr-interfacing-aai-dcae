@@ -37,14 +37,27 @@ The bash scripts will perform a cURL command to send a REST request to the A&AI 
 
 This chapter descibes the several test scripts its usage and functions.
 
-### _ecample
+### _example
 
 This scripts calls all the other scripts in order to give valid examples and to expain by examples the usage ot the other scripts.
+
+```
+./_example.sh 
+```
+
+Please see valid examples using the followfing command (or continue reading):
+
+```
+cat _example.sh 
+```
 
 ### createPnf
 
 The script creates a PNF object in A&AI. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQm, DWHC] according to document "295672 SDN-R System Requirements".
 
+```
+./createPnf.sh MSS8
+```
 
 ### sendHeartbeat
 
@@ -86,10 +99,14 @@ This script send a VES message of domain "thresholdCrossingAlert" to DCAE. It re
 The following example show the usage of this script. The TCA with name "TCA" for equipment type "6352" with alarmAction "SET" will be send.
 
 ```
-./sendFTca.sh 6352 TCA SET
+./sendTca.sh 6352 TCA SET
 ```
 
 
 ### send15minPm
 
 This script send a VES message of domain "measurementsForVfScaling" to DCAE. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQm, DWHC] according to document "295672 SDN-R System Requirements".
+
+```
+./send15minPm.sh MP06
+```

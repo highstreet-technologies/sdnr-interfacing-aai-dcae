@@ -7,12 +7,12 @@
 controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
 
 ################################################################################
-# A&AI communcation end point 
+# A&AI communication end point 
 urlAai=http://localhost:8447/aai
 basicAuthAai=AAI:AAI
 
 ################################################################################
-# DCAE VES Collector communcation end point 
+# DCAE VES Collector communication end point 
 urlVes=http://localhost:8443/eventListener/v3
 basicAuthVes=ves:ves
 
