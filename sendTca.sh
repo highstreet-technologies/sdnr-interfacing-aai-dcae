@@ -50,10 +50,7 @@ do
 done
 echo;
 
-sed -e "$sequence" ./json/tca-body-template.json > ./json/tca-body.json
+body=./json/examples/${pnfType^^}-${alarmType}-${action}-tca.json;
+sed -e "$sequence" ./json/templates/tca.json > $body;
 
-# json=$(< ./json/tca-body.json)
-# echo "     body: $json"
-# echo
-
-curl -i -u $basicAuthVes -X POST -d  @json/tca-body.json --header "Content-Type: application/json" $urlVes
+curl -i -u $basicAuthVes -X POST -d  @${body} --header "Content-Type: application/json" $urlVes

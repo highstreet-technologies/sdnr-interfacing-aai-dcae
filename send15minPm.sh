@@ -39,10 +39,7 @@ do
 done
 echo;
 
-sed -e "$sequence" ./json/measurement-body-template.json > ./json/measurement-body.json
+body=./json/examples/${pnfType^^}-measurement.json
+sed -e "$sequence" ./json/templates/measurement.json > $body
 
-# json=$(< ./json/measurement-body.json)
-# echo "     body: $json"
-# echo
-
-curl -i -u $basicAuthVes -X POST -d  @json/measurement-body.json --header "Content-Type: application/json" $urlVes
+curl -i -u $basicAuthVes -X POST -d  @${body} --header "Content-Type: application/json" $urlVes

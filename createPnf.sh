@@ -25,6 +25,7 @@ do
 done
 echo;
 
-sed -e "$sequence" ./json/pnf-body-template.json > ./json/pnf-body.json
+body=./json/examples/${pnfType^^}-pnf.json
+sed -e "$sequence" ./json/templates/pnf.json > $body
 
-curl -i -u $basicAuthAai -X PUT -d  @json/pnf-body.json -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/aai/v8/network/pnfs/pnf/${pnfIdByType[$pnfType]}
+curl -i -u $basicAuthAai -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/aai/v8/network/pnfs/pnf/${pnfIdByType[$pnfType]}

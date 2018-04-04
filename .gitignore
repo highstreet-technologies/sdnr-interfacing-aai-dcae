@@ -1,2 +1,6 @@
-json/*-body.json
+*-heartbeat.json
+*-pnf.json
+*-fault.json
+*-tca.json
+*-measurement.json
 *.log

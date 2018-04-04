@@ -28,10 +28,7 @@ do
 done
 echo;
 
-sed -e "$sequence" ./json/heartbeat-body-template.json > ./json/heartbeat-body.json
+body=./json/examples/heartbeat.json
+sed -e "$sequence" ./json/templates/heartbeat.json > $body;
 
-# json=$(< ./json/fault-body.json)
-# echo "     body: $json"
-# echo
-
-curl -i -u $basicAuthVes -d @json/heartbeat-body.json --header "Content-Type: application/json" $urlVes
+curl -i -u $basicAuthVes -d @${body} --header "Content-Type: application/json" $urlVes

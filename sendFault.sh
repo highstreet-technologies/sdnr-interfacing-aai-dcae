@@ -38,10 +38,7 @@ do
 done
 echo;
 
-sed -e "$sequence" ./json/fault-body-template.json > ./json/fault-body.json
+body="./json/examples/${pnfType^^}-${alarmType}-${severity}-fault.json"
+sed -e "$sequence" ./json/templates/fault.json > $body;
 
-# json=$(< ./json/fault-body.json)
-# echo "     body: $json"
-# echo
-
-curl -i -u $basicAuthVes -X POST -d @json/fault-body.json --header "Content-Type: application/json" $urlVes
+curl -i -u $basicAuthVes -X POST -d @${body} --header "Content-Type: application/json" $urlVes
