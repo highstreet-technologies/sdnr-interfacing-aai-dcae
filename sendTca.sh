@@ -16,14 +16,11 @@ declare -A severities=(
     [set]=WARNING
 )
          severity=${severities[${3,,}]};
-    alarmInstance=$( echo "${pnfIdByType[$pnfType]}$alarmType$severity" | md5sum );
-
 
 declare -A mapping=(
     [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
-    [eventId]=${eventId}
-    [alarmInstance]=${alarmInstance}
+    [eventId]="${pnfIdByType[$pnfType]}_${interfaceByType[$pnfType]}_${alarmType}"
     [type]=${pnfType^^}
     [interface]=${interfaceByType[$pnfType]}
     [alarm]=${alarmType}

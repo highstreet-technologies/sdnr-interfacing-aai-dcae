@@ -6,11 +6,11 @@
             pnfType=${1,,};
    collectionEndTime=$(( $timeInS - $(($timeInS % 900))));
  collectionStartTime=$(( collectionEndTime - 900 ));
-
+ 
 declare -A mapping=(
     [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
-    [eventId]=${eventId}
+    [eventId]="${pnfIdByType[$pnfType]}_${collectionEndTime}_15min"
     [type]=${pnfType^^}
     [interface]=${interfaceByType[$pnfType]}
     [timestamp]=${timestamp}

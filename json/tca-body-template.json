@@ -10,9 +10,6 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "internalHeaderFields": {
-        "alarmInstance": "@alarmInstance@"
-      },
       "version": 3.0
     },
     "thresholdCrossingAlertFields": {

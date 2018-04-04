@@ -6,7 +6,7 @@
 
 declare -A mapping=(
     [controllerName]=$(hostname --fqdn)
-    [eventId]=${eventId}
+    [eventId]="$(hostname --fqdn)_${eventTime}"
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}
 )
