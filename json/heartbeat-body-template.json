@@ -12,10 +12,10 @@
       "sourceName": "@controllerName@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 2.0
+      "version": 3.0
     },
     "heartbeatFields": {
-      "heartbeatFieldsVersion": 1.1,
+      "heartbeatFieldsVersion": 1.0,
       "heartbeatInterval": 20,
       "additionalFields": [
         {

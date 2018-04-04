@@ -6,17 +6,17 @@
       "eventName": "Microwave_Radio_Alarms",
       "sequence": 0,
       "priority": "High",
-      "reportingEntityName": "@pnfId@",
+      "reportingEntityName": "@controllerName@",
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
       "internalHeaderFields": {
         "alarmInstance": "@alarmInstance@"
       },
-      "version": 2.0
+      "version": 3.0
     },
     "faultFields": {
-      "faultFieldsVersion": 1.1,
+      "faultFieldsVersion": 2.0,
       "alarmCondition": "@alarm@",
       "alarmInterfaceA": "@interface@",
       "eventSourceType": "@type@",

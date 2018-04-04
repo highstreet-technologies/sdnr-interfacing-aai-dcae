@@ -6,7 +6,7 @@
       "eventName": "Microwave_Radio_Performance_Measurement",
       "sequence": 0,
       "priority": "Low",
-      "reportingEntityName": "@pnfId@",
+      "reportingEntityName": "@controllerName@",
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@collectionStartTime@",
       "lastEpochMicrosec": "@collectionEndTime@",
@@ -14,7 +14,7 @@
         "intervalStartTime": "@intervalStartTime@",
         "intervalEndTime": "@intervalEndTime@"
       },
-      "version": 2.0
+      "version": 3.0
     },
     "measurementsForVfScalingFields": {
       "measurementsForVfScalingVersion": 2.0,

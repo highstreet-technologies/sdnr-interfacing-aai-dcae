@@ -6,17 +6,17 @@
       "eventName": "Microwave_TCA",
       "sequence": 0,
       "priority": "High",
-      "reportingEntityName": "@pnfId@",
+      "reportingEntityName": "@controllerName@",
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
       "internalHeaderFields": {
         "alarmInstance": "@alarmInstance@"
       },
-      "version": 2.0
+      "version": 3.0
     },
     "thresholdCrossingAlertFields": {
-      "thresholdCrossingFieldsVersion": 1.1,
+      "thresholdCrossingFieldsVersion": 2.0,
       "additionalParameters": [],
       "alertAction": "@action@",
       "alertDescription": "TCA",
