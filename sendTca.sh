@@ -20,7 +20,6 @@ declare -A severities=(
 
 
 declare -A mapping=(
-    [controllerId]=${controllerId}
     [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
     [eventId]=${eventId}

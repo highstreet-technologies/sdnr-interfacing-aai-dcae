@@ -3,10 +3,6 @@
 # from SDN-R to DCAE and A&AI
 
 ################################################################################
-# SDN-R identifier (how to generate from FQDN in bash?)
-controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
-
-################################################################################
 # A&AI communication end point 
 urlAai=http://localhost:8447/aai
 basicAuthAai=AAI:AAI

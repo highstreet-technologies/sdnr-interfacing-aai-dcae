@@ -5,7 +5,6 @@
 . config;
 
 declare -A mapping=(
-    [controllerId]=${controllerId}
     [controllerName]=$(hostname --fqdn)
     [eventId]=${eventId}
     [timestamp]=${timestamp}

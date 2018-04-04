@@ -20,7 +20,6 @@ It is nessary to configure the DCAE and A&AI servers for valid excecution of the
 Please update the varables in [config](-/config) accordintly to the test enviroment.
 
 ```
-controllerId=46fa9a9a-5e1f-4286-8035-cb0df44e907a
 urlAai=http://localhost:8447/aai
 basicAuthAai=AAI:AAI
 urlVes=http://localhost:8443/eventListener/v3

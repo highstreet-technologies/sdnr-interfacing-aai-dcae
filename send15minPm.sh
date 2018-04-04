@@ -8,7 +8,6 @@
  collectionStartTime=$(( collectionEndTime - 900 ));
 
 declare -A mapping=(
-    [controllerId]=${controllerId}
     [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
     [eventId]=${eventId}
