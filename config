@@ -82,3 +82,5 @@ interfaceByType=(
 
 spaces="                   ";
 sequence=;
+
+mkdir -p json/examples

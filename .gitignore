@@ -1,6 +1,2 @@
-*-heartbeat.json
-*-pnf.json
-*-fault.json
-*-tca.json
-*-measurement.json
+json/examples
 *.log
