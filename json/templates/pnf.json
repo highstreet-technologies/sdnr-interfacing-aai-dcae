@@ -5,5 +5,35 @@
     "equip-model": "@model@",
     "equip-vendor": "@vendor@",
     "ipaddress-v4-oam": "@oamIp@",
-    "in-maint": true
+    "in-maint": true,
+    "p-interfaces": [
+        {
+            "interface-name": "@interface@",
+            "speed-value": "300",
+            "speed-units": "MBit/s",
+            "port-description": "Air Interface (MWPS)",
+            "equipment-identifier": "@pnfId@-@interface@",
+            "interface-role": "Wireless",
+            "interface-type": "Air Interface (MWPS)",
+            "resource-version": "@model@",
+            "relationship-list": [
+                {
+                    "related-to": "A keyword provided by A&AI to indicate type of node.",
+                    "related-link": "URL to the object in A&AI.",
+                    "relationship-data": [
+                        {
+                            "relationship-key": "A keyword provided by A&AI to indicate an attribute.",
+                            "relationship-value": "Value of the attribute"
+                        }
+                    ],
+                    "related-to-property": [
+                        {
+                            "property-key": "Key part of a key/value pair",
+                            "property-value": "Value part of a key/value pair"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
