@@ -7,11 +7,15 @@
               domain="measurementsForVfScaling";
    collectionEndTime=$(( $timeInS - $(($timeInS % 900))));
  collectionStartTime=$(( collectionEndTime - 900 ));
+         granularity="PM15min";
  
 declare -A mapping=(
+    [domain]=$domain
     [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
-    [eventId]="${pnfIdByType[$pnfType]}_${collectionEndTime}_15min"
+    [granularity]=$granularity
+    [eventId]="${pnfIdByType[$pnfType]}_${collectionEndTime}_${granularity}"
+    [eventType]=${eventType}
     [type]=${pnfType^^}
     [interface]=${interfaceByType[$pnfType]}
     [timestamp]=${timestamp}

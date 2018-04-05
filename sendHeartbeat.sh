@@ -6,8 +6,10 @@
 domain=heartbeat;
 
 declare -A mapping=(
+    [domain]=$domain
     [controllerName]=$(hostname --fqdn)
     [eventId]="$(hostname --fqdn)_${eventTime}"
+    [eventType]="Controller"
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}
 )

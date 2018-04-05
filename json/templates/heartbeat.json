@@ -1,12 +1,15 @@
 {
   "event": {
     "commonEventHeader": {
-      "domain": "heartbeat",
+      "domain": "@domain@",
       "eventId": "@eventId@",
-      "eventName": "ControllerHeartbeat",
+      "eventName": "@domain@_@eventType@",
+      "eventType": "@eventType@",
       "sequence": 0,
       "priority": "Low",
+      "reportingEntityId": "",
       "reportingEntityName": "@controllerName@",
+      "sourceId": "",
       "sourceName": "@controllerName@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",

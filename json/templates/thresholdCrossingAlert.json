@@ -1,12 +1,15 @@
 {
   "event": {
     "commonEventHeader": {
-      "domain": "thresholdCrossingAlert",
+      "domain": "@domain@",
       "eventId": "@eventId@",
-      "eventName": "Microwave_TCA",
+      "eventName": "@domain@_@eventType@_TCA_@alarm@",
+      "eventType": "@eventType@_TCA",
       "sequence": 0,
       "priority": "High",
+      "reportingEntityId": "",
       "reportingEntityName": "@controllerName@",
+      "sourceId": "",
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
@@ -32,6 +35,10 @@
         {
           "name": "eventTime",
           "value": "@eventTime@"
+        },
+        {
+          "name": "equipType",
+          "value": "@type@"
         },
         {
           "name": "vendor",

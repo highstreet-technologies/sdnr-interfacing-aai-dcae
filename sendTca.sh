@@ -19,9 +19,11 @@ declare -A severities=(
          severity=${severities[${3,,}]};
 
 declare -A mapping=(
+    [domain]=$domain
     [controllerName]=$(hostname --fqdn)
     [pnfId]=${pnfIdByType[$pnfType]}
     [eventId]="${pnfIdByType[$pnfType]}_${interfaceByType[$pnfType]}_${alarmType}"
+    [eventType]=${eventType}
     [type]=${pnfType^^}
     [interface]=${interfaceByType[$pnfType]}
     [alarm]=${alarmType}

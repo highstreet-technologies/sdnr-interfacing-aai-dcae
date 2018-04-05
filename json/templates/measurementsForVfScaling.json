@@ -3,10 +3,13 @@
     "commonEventHeader": {
       "domain": "measurementsForVfScaling",
       "eventId": "@eventId@",
-      "eventName": "Microwave_Radio_Performance_Measurement",
+      "eventName": "@domain@_@eventType@_@granularity@",
+      "eventType": "@eventType@_@granularity@",
       "sequence": 0,
       "priority": "Low",
+      "reportingEntityId": "",
       "reportingEntityName": "@controllerName@",
+      "sourceId": "",
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@collectionStartTime@",
       "lastEpochMicrosec": "@collectionEndTime@",
@@ -90,6 +93,10 @@
         {
             "name": "eventTime",
             "value": "@eventTime@"
+        },
+        {
+          "name": "equipType",
+          "value": "@type@"
         },
         {
           "name": "vendor",

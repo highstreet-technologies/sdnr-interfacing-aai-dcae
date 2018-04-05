@@ -1,12 +1,15 @@
 {
   "event": {
     "commonEventHeader": {
-      "domain": "fault",
+      "domain": "@domain@",
       "eventId": "@eventId@",
-      "eventName": "Microwave_Radio_Alarms",
+      "eventName": "@domain@_@eventType@_Alarms_@alarm@",
+      "eventType": "@eventType@_Alarms",
       "sequence": 0,
       "priority": "High",
+      "reportingEntityId": "",
       "reportingEntityName": "@controllerName@",
+      "sourceId": "",
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
@@ -16,7 +19,7 @@
       "faultFieldsVersion": 2.0,
       "alarmCondition": "@alarm@",
       "alarmInterfaceA": "@interface@",
-      "eventSourceType": "@type@",
+      "eventSourceType": "@eventType@",
       "specificProblem": "@alarm@",
       "eventSeverity": "@severity@",
       "vfStatus": "Active",
@@ -24,6 +27,10 @@
         {
           "name": "eventTime",
           "value": "@eventTime@"
+        },
+        {
+          "name": "equipType",
+          "value": "@type@"
         },
         {
           "name": "vendor",
