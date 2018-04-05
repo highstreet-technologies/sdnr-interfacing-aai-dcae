@@ -3,7 +3,8 @@
 # Script to send an VES Message Event to DCAE
    
 . config;
-            pnfType=${1,,};
+             pnfType=${1,,};
+              domain="measurementsForVfScaling";
    collectionEndTime=$(( $timeInS - $(($timeInS % 900))));
  collectionStartTime=$(( collectionEndTime - 900 ));
  
@@ -39,7 +40,7 @@ do
 done
 echo;
 
-body=./json/examples/${pnfType^^}-measurement.json
-sed -e "$sequence" ./json/templates/measurement.json > $body
+body=./json/examples/${pnfType^^}-${domain}.json
+sed -e "$sequence" ./json/templates/$domain.json > $body
 
 curl -i -u $basicAuthVes -X POST -d  @${body} --header "Content-Type: application/json" $urlVes

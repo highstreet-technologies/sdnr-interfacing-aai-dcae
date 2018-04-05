@@ -3,6 +3,7 @@
 # Script to send an VES Message Event to DCAE
 
 . config;
+domain=heartbeat;
 
 declare -A mapping=(
     [controllerName]=$(hostname --fqdn)
@@ -28,7 +29,7 @@ do
 done
 echo;
 
-body=./json/examples/heartbeat.json
-sed -e "$sequence" ./json/templates/heartbeat.json > $body;
+body=./json/examples/${domain}.json
+sed -e "$sequence" ./json/templates/$domain.json > $body;
 
 curl -i -u $basicAuthVes -d @${body} --header "Content-Type: application/json" $urlVes

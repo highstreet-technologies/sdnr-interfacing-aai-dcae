@@ -3,9 +3,10 @@
 # Script to send an VES Message Event to DCAE
 
 . config;
-     pnfType=${1,,};
+      pnfType=${1,,};
     alarmType=$2;
      severity=$3;
+       domain="fault";
 
 declare -A mapping=(
     [controllerName]=$(hostname --fqdn)
@@ -38,7 +39,7 @@ do
 done
 echo;
 
-body="./json/examples/${pnfType^^}-${alarmType}-${severity}-fault.json"
-sed -e "$sequence" ./json/templates/fault.json > $body;
+body="./json/examples/${pnfType^^}-${alarmType}-${severity}-${domain}.json"
+sed -e "$sequence" ./json/templates/$domain.json > $body;
 
 curl -i -u $basicAuthVes -X POST -d @${body} --header "Content-Type: application/json" $urlVes

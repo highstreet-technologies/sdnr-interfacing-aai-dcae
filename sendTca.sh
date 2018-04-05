@@ -6,6 +6,7 @@
             pnfType=${1,,};
           alarmType=$2;
              action=$3;
+             domain=thresholdCrossingAlert;
 collectionTimestamp=$(date -u -R -d @$timeInS );:
           time15min=$(( $timeInS - $(($timeInS % 900))));
 eventStartTimestamp=$(date -u -R -d @$time15min );
@@ -50,7 +51,7 @@ do
 done
 echo;
 
-body=./json/examples/${pnfType^^}-${alarmType}-${action}-tca.json;
-sed -e "$sequence" ./json/templates/tca.json > $body;
+body=./json/examples/${pnfType^^}-${alarmType}-${action}-${domain}.json;
+sed -e "$sequence" ./json/templates/$domain.json > $body;
 
 curl -i -u $basicAuthVes -X POST -d  @${body} --header "Content-Type: application/json" $urlVes
