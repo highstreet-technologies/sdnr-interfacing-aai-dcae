@@ -18,7 +18,7 @@ timestamp=$(date -u +%s%3N)
 timeInS=${timestamp:0:$((${#timestamp}-3))}
 timeMs=${timestamp:(-3)}
 eventTime=$(date -u -d @$timeInS +'%Y-%m-%dT%H:%M:%S').$timeMs"Z"
-eventType="Wireless_Radio"
+eventType="Microwave_Radio"
 
 ################################################################################
 # Infomration from document: 295672 SDN-R System Requirements
