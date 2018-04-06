@@ -94,7 +94,7 @@ This script send a VES message of domain "thresholdCrossingAlert" to DCAE. It re
 
 2. **alarmType**: or alarm name. Any string which references a supported alarm name (TCA) of the equipment type.
 
-3. **alertAction**: The action of tha TCA as defined by [VES schema](./json/schema/CommonEventFormat_28.4.1.json). 
+3. **alertAction**: The action of TCA as defined by [VES schema](./json/schema/CommonEventFormat_28.4.1.json). 
 
 The following example show the usage of this script. The TCA with name "TCA" for equipment type "6352" with alarmAction "SET" will be send.
 
