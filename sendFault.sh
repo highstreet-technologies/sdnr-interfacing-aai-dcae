@@ -8,6 +8,12 @@
      severity=$3;
        domain="fault";
 
+# exception for controller alarms
+if [ "${pnfType^^}" == "SDNR" ]
+  then
+    eventType="ONAP_SDNR_Controller";
+fi
+
 declare -A mapping=(
     [domain]=$domain
     [controllerName]=$(hostname --fqdn)

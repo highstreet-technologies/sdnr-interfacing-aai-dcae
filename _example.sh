@@ -23,6 +23,7 @@
 ./sendFault.sh MSS8 signalIsLost CRITICAL
 ./sendFault.sh DWHQ LossOfSignalAlarm CRITICAL
 ./sendFault.sh DWHC HAAMRunningInLowerModulation MAJOR
+./sendFault.sh SDNR connectionLossNe MAJOR
 
 ################################################################################
 # clear fault
@@ -32,6 +33,7 @@
 ./sendFault.sh MSS8 signalIsLost NORMAL
 ./sendFault.sh DWHQ LossOfSignalAlarm NORMAL
 ./sendFault.sh DWHC HAAMRunningInLowerModulation NORMAL
+./sendFault.sh SDNR connectionLossNe NORMAL
 
 ################################################################################
 # raise threshold crossed alerts

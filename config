@@ -29,6 +29,7 @@ eventType="Microwave_Radio"
 # d. Nokia      9500MPR          (MSS8)
 # e. Dragonwave Horizon Quantum  (DWHQ)
 # f. Dragonwave Horizon Compact+ (DWHC)
+# z. SDN-R      The controller itsself (SDNR)
 
 declare -A pnfIdByType;
 declare -A modelByType;
@@ -43,6 +44,7 @@ pnfIdByType=(
     [mss8]=PRTNILACQ01M01MSS801 
     [dwhq]=SEDNKSAHQ01M01DWHQ01 
     [dwhc]=SNSNFLR0Q01M01DWHC01
+    [sdnr]=$(hostname --fqdn)
 );
 
 modelByType=(
@@ -52,6 +54,7 @@ modelByType=(
     [mss8]="9500MPR" 
     [dwhq]="Horizon Quantum" 
     [dwhc]="Horizon Compact+"
+    [sdnr]="ONAP Controller for Radio"
 );
 
 oamIpByType=(
@@ -61,6 +64,7 @@ oamIpByType=(
     [mss8]=10.10.10.14 
     [dwhq]=10.10.10.15 
     [dwhc]=10.10.10.16
+    [sdnr]=127.0.0.1
 );
 
 vendorsByType=(
@@ -70,6 +74,7 @@ vendorsByType=(
     [mss8]=Nokia 
     [dwhq]=DragonWaveX 
     [dwhc]=DragonWaveX
+    [sdnr]=ONAP
 );
 
 interfaceByType=(
@@ -79,6 +84,7 @@ interfaceByType=(
     [mss8]=LP-MWPS-RADIO 
     [dwhq]=LP-MWPS-RADIO 
     [dwhc]=LP-MWPS-RADIO
+    [sdnr]=northbound-interface
 )
 
 spaces="                   ";
