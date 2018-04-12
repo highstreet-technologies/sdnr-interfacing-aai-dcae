@@ -21,15 +21,16 @@ eventTime=$(date -u -d @$timeInS +'%Y-%m-%dT%H:%M:%S').$timeMs"Z"
 eventType="Microwave_Radio"
 
 ################################################################################
-# Infomration from document: 295672 SDN-R System Requirements
+# Information from document: 295672 SDN-R System Requirements
 #
-# a. Ericsson   6352    HighCap  (6352)
-# b. Ericsson   MLTN    6P       (MP06)
-# c. Ericsson   MLTN    20P      (MP20)
-# d. Nokia      9500MPR          (MSS8)
-# e. Dragonwave Horizon Quantum  (DWHQ)
-# f. Dragonwave Horizon Compact+ (DWHC)
-# z. SDN-R      The controller itsself (SDNR)
+# a. Ericsson     6352    HighCap    (6352)
+# b. Ericsson     MLTN    6P       (  MP06)
+# c. Ericsson     MLTN    20P        (MP20)
+# d. Nokia        9500MPR            (MSS8)
+# e. DragonWave-X Horizon Quantum    (DWHQ)
+# f. DragonWave-X Horizon Compact+   (DWHC)
+#
+# z. SDN-R        Controller itself (SDNR)
 
 declare -A pnfIdByType;
 declare -A modelByType;
