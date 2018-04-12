@@ -24,7 +24,7 @@ eventType="Microwave_Radio"
 # Information from document: 295672 SDN-R System Requirements
 #
 # a. Ericsson     6352    HighCap    (6352)
-# b. Ericsson     MLTN    6P       (  MP06)
+# b. Ericsson     MLTN    6P         (MP06)
 # c. Ericsson     MLTN    20P        (MP20)
 # d. Nokia        9500MPR            (MSS8)
 # e. DragonWave-X Horizon Quantum    (DWHQ)
