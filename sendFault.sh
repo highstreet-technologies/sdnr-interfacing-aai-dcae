@@ -26,7 +26,7 @@ declare -A mapping=(
     [severity]=${severity}
     [timestamp]=${timestamp}
     [eventTime]=${eventTime}
-    [vendor]=${vendorsByType[$pnfType]}
+    [vendor]=${vendorsByType[$pnfType]^^}
     [model]=${modelByType[$pnfType]}
 )
 

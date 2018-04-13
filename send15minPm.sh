@@ -24,7 +24,7 @@ declare -A mapping=(
     [collectionEndTime]=${collectionEndTime}000
     [intervalStartTime]=$(date -u -R -d @$collectionStartTime )
     [intervalEndTime]=$(date -u -R -d @$collectionEndTime )
-    [vendor]=${vendorsByType[$pnfType]}
+    [vendor]=${vendorsByType[$pnfType]^^}
     [model]=${modelByType[$pnfType]}
 )
 

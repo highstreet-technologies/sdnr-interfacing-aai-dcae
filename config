@@ -73,8 +73,8 @@ vendorsByType=(
     [mp06]=Ericsson 
     [mp20]=Ericsson 
     [mss8]=Nokia 
-    [dwhq]=DragonWaveX 
-    [dwhc]=DragonWaveX
+    [dwhq]=DragonWave-X 
+    [dwhc]=DragonWave-X
     [sdnr]=ONAP
 );
 

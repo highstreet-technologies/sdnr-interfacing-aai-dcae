@@ -33,7 +33,7 @@ declare -A mapping=(
     [eventTime]=${eventTime}
     [collectionTimestamp]=${collectionTimestamp}
     [eventStartTimestamp]=${eventStartTimestamp}
-    [vendor]=${vendorsByType[$pnfType]}
+    [vendor]=${vendorsByType[$pnfType]^^}
     [model]=${modelByType[$pnfType]}
 )
 

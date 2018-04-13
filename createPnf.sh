@@ -10,7 +10,7 @@ declare -A mapping=(
     [type]=${pnfType^^}
     [model]=${modelByType[$pnfType]}
     [oamIp]=${oamIpByType[$pnfType]}
-    [vendor]=${vendorsByType[$pnfType]}
+    [vendor]=${vendorsByType[$pnfType]^^}
 )
 
 echo "################################################################################";
