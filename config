@@ -30,7 +30,12 @@ eventType="Microwave_Radio"
 # e. DragonWave-X Horizon Quantum    (DWHQ)
 # f. DragonWave-X Horizon Compact+   (DWHC)
 #
-# z. SDN-R        Controller itself (SDNR)
+# g. Nokia        PNF5G              (NO5G)
+# h. Ericsson     PNF5G              (ER5G)
+# i. Commscope    OneCell            (CSOC)  
+# j. Commscope    DAS     ION-E      (CSIE)
+#
+# z. SDN-R        Controller itself  (SDNR)
 
 declare -A pnfIdByType;
 declare -A modelByType;
@@ -45,6 +50,12 @@ pnfIdByType=(
     [mss8]=PRTNILACQ01M01MSS801 
     [dwhq]=SEDNKSAHQ01M01DWHQ01 
     [dwhc]=SNSNFLR0Q01M01DWHC01
+
+    [no5g]=MMTSIL02Q01M01NO5G01 
+    [er5g]=PRTNILACQ01M01ER5G01 
+    [csoc]=SEDNKSAHQ01M01CSOC01 
+    [csie]=SNSNFLR0Q01M01CSIE01
+
     [sdnr]=$(hostname --fqdn)
 );
 
@@ -55,6 +66,12 @@ modelByType=(
     [mss8]="9500MPR" 
     [dwhq]="Horizon Quantum" 
     [dwhc]="Horizon Compact+"
+
+    [no5g]="PNF5G" 
+    [er5g]="PNF5G" 
+    [csoc]="OneCell" 
+    [csie]="DAS ION-E"
+
     [sdnr]="ONAP Controller for Radio"
 );
 
@@ -65,6 +82,12 @@ oamIpByType=(
     [mss8]=10.10.10.14 
     [dwhq]=10.10.10.15 
     [dwhc]=10.10.10.16
+
+    [no5g]=10.10.10.17 
+    [er5g]=10.10.10.18 
+    [csoc]=10.10.10.19 
+    [csie]=10.10.10.20
+
     [sdnr]=127.0.0.1
 );
 
@@ -75,6 +98,12 @@ vendorsByType=(
     [mss8]=Nokia 
     [dwhq]=DragonWave-X 
     [dwhc]=DragonWave-X
+
+    [no5g]=Nokia 
+    [er5g]=Ericsson 
+    [csoc]=Commscope 
+    [csie]=Commscope
+
     [sdnr]=ONAP
 );
 
@@ -85,6 +114,10 @@ interfaceByType=(
     [mss8]=LP-MWPS-RADIO 
     [dwhq]=LP-MWPS-RADIO 
     [dwhc]=LP-MWPS-RADIO
+    [no5g]=LP-MWPS-RADIO 
+    [er5g]=LP-MWPS-RADIO 
+    [csoc]=LP-MWPS-RADIO 
+    [csie]=LP-MWPS-RADIO
     [sdnr]=northbound-interface
 )
 

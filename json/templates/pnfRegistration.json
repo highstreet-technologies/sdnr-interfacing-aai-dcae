@@ -1,0 +1,34 @@
+{
+  "event": {
+    "commonEventHeader": {
+      "domain": "@domain@",
+      "eventId": "@eventId@",
+      "eventName": "@domain@_@eventType@",
+      "eventType": "@eventType@",
+      "sequence": 0,
+      "priority": "Low",
+      "reportingEntityId": "",
+      "reportingEntityName": "@controllerName@",
+      "sourceId": "",
+      "sourceName": "@pnfId@",
+      "startEpochMicrosec": "@timestamp@",
+      "lastEpochMicrosec": "@timestamp@",
+      "version": 3.0
+    },
+    "pnfRegistrationtFieldsVersionFields": {
+      "pnfRegistrationtFieldsVersionFieldsVersion": 1.0,
+      "family": "@vendor@-@type@",
+      "type": "@type@",
+      "modelNumber": "@model@",
+      "serialNumber": "@vendor@-@type@-@oamIp@model@",
+      "softwareVersion": "2.3.5",
+      "oamIpv4Address": "@oamIp@",
+      "oamIpv6Address": "@oamIpV6@",
+      "oamProtocol": "ansible",
+      "oamPort": 22,
+      "defaultUsername": "admin",
+      "defaultPassword": "admin",
+      "publicCertificate": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOrRb2Iwl24xaIQyh9CLc+9E8F9+D/Jz+nwcwuP30GrUbQSH1zi+VUBnSgXgCIb900LNLqNJdYsSLJ5gUSFHdykgQM36Pz9mGVJswhqH9s5hTe4cYc9jLQsbxP/Wv9e0BliOKUsF0Xwn0DEabrBtMYgU4WjpvEkVA884XpZBDz9aVRApC9YbVg8lPQBlJEaTkPE+KX9IYZW72Dk5J59xyVcdZccjf0NiMxgX654fG7cMtVigh6xbUcBHpAdnPT4qqTULsDdlzW3LFOCWS5SyhEH9Idu7+p0Xifx9EPJjihkQh7lZ7IvOChw3IAP/tPdx7coqPH9H2oEXAcS8E5SSut demx8as6@open-x"
+    }
+  }
+}

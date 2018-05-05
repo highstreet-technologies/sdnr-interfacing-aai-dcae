@@ -1,0 +1,76 @@
+{
+  "event": {
+    "commonEventHeader": {
+      "domain": "@domain@",
+      "eventId": "@eventId@",
+      "eventName": "@domain@_@eventType@",
+      "eventType": "@eventType@",
+      "sequence": 0,
+      "priority": "Low",
+      "reportingEntityId": "",
+      "reportingEntityName": "@controllerName@",
+      "sourceId": "",
+      "sourceName": "@pnfId@",
+      "startEpochMicrosec": "@timestamp@",
+      "lastEpochMicrosec": "@timestamp@",
+      "version": 3.0
+    },
+    "otherFields": {
+      "otherFieldsVersion": 2.0,
+      "nameValuePairs": [
+        {
+          "name": "pnfVendorName",
+          "value": "@vendor@"
+        },
+        {
+          "name": "pnfOamIpv4Address",
+          "value": "@oamIp@"
+        },
+        {
+          "name": "pnfOamIpv6Address",
+          "value": "@oamIpV6@"
+        },
+        {
+          "name": "pnfFamily",
+          "value": "@vendor@-@type@"
+        },
+        {
+          "name": "pnfType",
+          "value": "@type@"
+        },
+        {
+          "name": "pnfModelNumber",
+          "value": "@model@"
+        },
+        {
+          "name": "pnfSerialNumber",
+          "value": "@vendor@-@type@-@oamIp@"
+        },
+        {
+          "name": "pnfSoftwareVersion",
+          "value": "2.3.5"
+        },
+        {
+          "name": "pnfOamProtocol",
+          "value": "ansible"
+        },
+        {
+          "name": "pnfOamPort",
+          "value": "22"
+        },
+        {
+          "name": "pnfDefaultUsername",
+          "value": "admin"
+        },
+        {
+          "name": "pnfDefaultPassword",
+          "value": "admin"
+        },
+        {
+          "name": "pnfPublicCertificate",
+          "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOrRb2Iwl24xaIQyh9CLc+9E8F9+D/Jz+nwcwuP30GrUbQSH1zi+VUBnSgXgCIb900LNLqNJdYsSLJ5gUSFHdykgQM36Pz9mGVJswhqH9s5hTe4cYc9jLQsbxP/Wv9e0BliOKUsF0Xwn0DEabrBtMYgU4WjpvEkVA884XpZBDz9aVRApC9YbVg8lPQBlJEaTkPE+KX9IYZW72Dk5J59xyVcdZccjf0NiMxgX654fG7cMtVigh6xbUcBHpAdnPT4qqTULsDdlzW3LFOCWS5SyhEH9Idu7+p0Xifx9EPJjihkQh7lZ7IvOChw3IAP/tPdx7coqPH9H2oEXAcS8E5SSut demx8as6@open-x"
+        }
+      ]
+    }
+  }
+}
