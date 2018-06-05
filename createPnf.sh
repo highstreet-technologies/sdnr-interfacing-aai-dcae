@@ -8,6 +8,7 @@ pnfType=${1,,};
 declare -A mapping=(
     [pnfId]=${pnfIdByType[$pnfType]}
     [type]=${pnfType^^}
+    [interface]=${interfaceByType[$pnfType]}
     [model]=${modelByType[$pnfType]}
     [oamIp]=${oamIpByType[$pnfType]}
     [vendor]=${vendorsByType[$pnfType]^^}
@@ -28,4 +29,4 @@ echo;
 body=./json/examples/${pnfType^^}-pnf.json
 sed -e "$sequence" ./json/templates/pnf.json > $body
 
-curl -i -u $basicAuthAai -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/aai/v8/network/pnfs/pnf/${pnfIdByType[$pnfType]}
+curl -i -k -E $crt --key $key -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/aai/v8/network/pnfs/pnf/${pnfIdByType[$pnfType]}

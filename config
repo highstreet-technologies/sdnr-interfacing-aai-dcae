@@ -4,13 +4,15 @@
 
 ################################################################################
 # A&AI communication end point 
-urlAai=http://localhost:8447/aai
-basicAuthAai=AAI:AAI
+urlAai=https://aai-int1.test.att.com:8443
+# basicAuthAai=AAI:AAI
+crt=./certs/file.crt.pem
+key=./certs/file.key.pem
 
 ################################################################################
 # DCAE VES Collector communication end point 
-urlVes=http://localhost:8443/eventListener/v3
-basicAuthVes=ves:ves
+urlVes=https://zldcrdm5bdce2coll01.95f374.rdm5b.tci.att.com:8443/eventListener/v5
+basicAuthVes=sample1:sample1
 
 ################################################################################
 # common generated event settings, please dont touch
@@ -21,15 +23,15 @@ eventTime=$(date -u -d @$timeInS +'%Y-%m-%dT%H:%M:%S').$timeMs"Z"
 eventType="Microwave_Radio"
 
 ################################################################################
-# Information from document: 295672 SDN-R System Requirements
+# Infomration from document: 295672 SDN-R System Requirements
 #
-# a. Ericsson     6352    HighCap    (6352)
-# b. Ericsson     MLTN    6P         (MP06)
-# c. Ericsson     MLTN    20P        (MP20)
-# d. Nokia        9500MPR            (MSS8)
-# e. DragonWave-X Horizon Quantum    (DWHQ)
-# f. DragonWave-X Horizon Compact+   (DWHC)
-#
+# a. Ericsson   6352    HighCap  (6352)
+# b. Ericsson   MLTN    6P       (MP06)
+# c. Ericsson   MLTN    20P      (MP20)
+# d. Nokia      9500MPR          (MSS8)
+# e. Dragonwave Horizon Quantum  (DWHQ)
+# f. Dragonwave Horizon Compact+ (DWHC)
+
 # g. Nokia        PNF5G              (NO5G)
 # h. Ericsson     PNF5G              (ER5G)
 # i. Commscope    OneCell            (CSOC)  

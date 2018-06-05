@@ -16,12 +16,20 @@ In case cURL needs to be please use the following command in a terminal.
 sudo apt-get install curl 
 ```
 
+For interfacinf with A&AI cert and key must be extracted acoording to
+https://wiki.web.att.com/pages/viewpage.action?spaceKey=SDNCDEV&title=Query+AAI+Using+Postman.
+```
+./_extractCertAndKey.sh
+```
+You will be ask to enter the "Input Password". 
+The password must not be shared here, please ask your admin.
+
 It is nessary to configure the DCAE and A&AI servers for valid excecution of the bash scripts.
 Please update the varables in [config](-/config) accordintly to the test enviroment.
 
 ```
 urlAai=http://localhost:8447/aai
-basicAuthAai=AAI:AAI
+# basicAuthAai=AAI:AAI
 urlVes=http://localhost:8443/eventListener/v3
 basicAuthVes=ves:ves
 ```
