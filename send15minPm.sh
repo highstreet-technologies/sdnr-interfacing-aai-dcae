@@ -47,4 +47,4 @@ echo;
 body=./json/examples/${pnfType^^}-${domain}.json
 sed -e "$sequence" ./json/templates/$domain.json > $body
 
-curl -i -u $basicAuthVes -X POST -d  @${body} --header "Content-Type: application/json" $urlVes
+curl -i -k -u $basicAuthVes -X POST -d  @${body} --header "Content-Type: application/json" $urlVes

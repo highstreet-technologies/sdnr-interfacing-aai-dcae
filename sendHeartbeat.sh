@@ -34,4 +34,4 @@ echo;
 body=./json/examples/${domain}.json
 sed -e "$sequence" ./json/templates/$domain.json > $body;
 
-curl -i -u $basicAuthVes -d @${body} --header "Content-Type: application/json" $urlVes
+curl -i -k -u $basicAuthVes -d @${body} --header "Content-Type: application/json" $urlVes
