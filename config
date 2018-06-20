@@ -4,10 +4,17 @@
 
 ################################################################################
 # A&AI communication end point 
-urlAai=https://aai-int1.test.att.com:8443
-# basicAuthAai=AAI:AAI
-crt=./certs/file.crt.pem
-key=./certs/file.key.pem
+#
+# Please check configuration /opt/app/sdnc/data/properties/aaiclient.properties
+# and run successfully /opt/app/sdnc/bin/testAAI.sh that uses the above 
+# properties file to test aaI connectivity. 
+
+# aaiSslKey=/opt/logs/externals/data/stores/keystore.client.p12
+aaiSslKey=/var/externals/data/stores/keystore.client.p12
+aaiSslKeyPsswd=adminadmin
+aaiAppId=SDN-R
+aaiUri=https://aai-pwt3.ecomp.cci.att.com:8443
+aaiApiVersion=aai/v13
 
 ################################################################################
 # DCAE VES Collector communication end point 

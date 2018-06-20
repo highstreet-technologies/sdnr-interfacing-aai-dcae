@@ -16,6 +16,15 @@
 ./createPnf.sh DWHC
 
 ################################################################################
+# get PNF from A%AI
+./getPnf.sh 6352
+./getPnf.sh MP06
+./getPnf.sh MP20
+./getPnf.sh MSS8
+./getPnf.sh DWHQ
+./getPnf.sh DWHC
+
+################################################################################
 # raise fault
 ./sendFault.sh 6352 lossOfSignal CRITICAL
 ./sendFault.sh MP06 TCA MAJOR

@@ -29,4 +29,4 @@ echo;
 body=./json/examples/${pnfType^^}-pnf.json
 sed -e "$sequence" ./json/templates/pnf.json > $body
 
-curl -i -k -E $crt --key $key -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/aai/v8/network/pnfs/pnf/${pnfIdByType[$pnfType]}
+echo "./jcurl.sh -v -k -p12 $aaiSslKey $aaiSslKeyPsswd -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/$aaiApiVersion/network/pnfs/pnf/${pnfIdByType[$pnfType]}"
