@@ -28,9 +28,12 @@ It is nessary to configure the DCAE and A&AI servers for valid excecution of the
 Please update the varables in [config](-/config) accordintly to the test enviroment.
 
 ```
-urlAai=http://localhost:8447/aai
-# basicAuthAai=AAI:AAI
-urlVes=http://localhost:8443/eventListener/v3
+aaiUri=https://localhost:8443/aai/v13
+aaiSslKey=/var/externals/data/stores/keystore.client.p12
+aaiSslKeyPsswd=adminadmin
+aaiAppId=SDN-R
+
+urlVes=http://localhost:8443/eventListener/v5
 basicAuthVes=ves:ves
 ```
 

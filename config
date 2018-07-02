@@ -10,11 +10,10 @@
 # properties file to test aaI connectivity. 
 
 # aaiSslKey=/opt/logs/externals/data/stores/keystore.client.p12
+aaiUri=https://aai-pwt3.ecomp.cci.att.com:8443/aai/v13
 aaiSslKey=/var/externals/data/stores/keystore.client.p12
 aaiSslKeyPsswd=adminadmin
 aaiAppId=SDN-R
-aaiUri=https://aai-pwt3.ecomp.cci.att.com:8443
-aaiApiVersion=aai/v13
 
 ################################################################################
 # DCAE VES Collector communication end point 

@@ -17,6 +17,12 @@ declare -A mapping=(
 echo "################################################################################";
 echo "# create or update PNF in A&AI";
 echo
+
+echo "       URI: "$aaiUri
+echo "   SSL Key: "$aaiSslKey
+echo "Key phrase: "$aaiSslKeyPsswd
+echo "    App-id: "$aaiAppId
+
 for key in "${!mapping[@]}"
 do
   label=$spaces$key;
@@ -29,4 +35,4 @@ echo;
 body=./json/examples/${pnfType^^}-pnf.json
 sed -e "$sequence" ./json/templates/pnf.json > $body
 
-./jcurl.sh -v -k -p12 $aaiSslKey $aaiSslKeyPsswd -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/$aaiApiVersion/network/pnfs/pnf/${pnfIdByType[$pnfType]}
+./jcurl.sh -v -k -p12 $aaiSslKey $aaiSslKeyPsswd -X PUT -d  @${body} -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/network/pnfs/pnf/${pnfIdByType[$pnfType]}
