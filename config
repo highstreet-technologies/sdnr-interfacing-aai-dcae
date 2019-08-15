@@ -17,8 +17,8 @@ aaiAppId=SDN-R
 
 ################################################################################
 # DCAE VES Collector communication end point 
-urlVes=https://zldcrdm5bdce2coll01.95f374.rdm5b.tci.att.com:8443/eventListener/v5
-basicAuthVes=sample1:sample1
+urlVes=http://localhost:30007/eventListener/v5
+basicAuthVes=will:pill
 
 ################################################################################
 # common generated event settings, please dont touch
