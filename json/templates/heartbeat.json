@@ -13,10 +13,14 @@
       "sourceName": "@controllerName@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 3.0
+      "nfNamingCode": "@type@",
+      "nfVendorName": "@vendor@",
+      "timeZoneOffset": "+00:00",
+      "version": "4.1",
+      "vesEventListenerVersion": "7.1"
     },
     "heartbeatFields": {
-      "heartbeatFieldsVersion": 1.0,
+      "heartbeatFieldsVersion": "3.0",
       "heartbeatInterval": 20,
       "additionalFields": [
         {

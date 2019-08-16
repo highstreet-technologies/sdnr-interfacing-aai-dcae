@@ -13,10 +13,14 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 3.0
+      "nfNamingCode": "@type@",
+      "nfVendorName": "@vendor@",
+      "timeZoneOffset": "+00:00",
+      "version": "4.1",
+      "vesEventListenerVersion": "7.1"
     },
     "faultFields": {
-      "faultFieldsVersion": 2.0,
+      "faultFieldsVersion": 4.0,
       "alarmCondition": "@alarm@",
       "alarmInterfaceA": "@interface@",
       "eventSourceType": "@eventType@",
@@ -31,10 +35,6 @@
         {
           "name": "equipType",
           "value": "@type@"
-        },
-        {
-          "name": "vendor",
-          "value": "@vendor@"
         },
         {
           "name": "model",

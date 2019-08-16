@@ -2,8 +2,10 @@
 
 Test scripts for interfaceing with DCAE and A&AI.
 
-For 1806 the interface definition with DCAE is: [CommonEventFormat_28.4.1.json](./json/schema/CommonEventFormat_28.4.1.json).
-For 1806 the interface definition with A&AI is: [add link when known]().
+For ONAP Frankfurt the interface definition with DCAE is: [CommonEventFormat_30.1_ONAP.json](./json/schema/CommonEventFormat_30.1_ONAP.json).
+The ONAP VES version are described in [ONAP documentation](https://onap.readthedocs.io/en/latest/submodules/vnfrqts/requirements.git/docs/Chapter8/ves7_1spec.html).
+
+For ONAP Frankfurt the interface definition with A&AI is: [add link when known]().
 
 ## Prerequisites
 
@@ -16,7 +18,7 @@ In case cURL needs to be please use the following command in a terminal.
 sudo apt-get install curl 
 ```
 
-For interfacinf with A&AI cert and key must be extracted acoording to
+For interfacing with cert (https) and key must be extracted acoording to
 https://wiki.web.att.com/pages/viewpage.action?spaceKey=SDNCDEV&title=Query+AAI+Using+Postman.
 ```
 ./_extractCertAndKey.sh
@@ -33,7 +35,7 @@ aaiSslKey=/var/externals/data/stores/keystore.client.p12
 aaiSslKeyPsswd=adminadmin
 aaiAppId=SDN-R
 
-urlVes=http://localhost:8443/eventListener/v5
+urlVes=http://localhost:8443/eventListener/v7
 basicAuthVes=ves:ves
 ```
 
@@ -64,10 +66,10 @@ cat _example.sh
 
 ### createPnf
 
-The script creates a PNF object in A&AI. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQ, DWHC] according to document "295672 SDN-R System Requirements".
+The script creates a PNF object in A&AI. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [1234, FYNG, R2D2, 7DEV, nSky, 1OSF] according to document "295672 SDN-R System Requirements".
 
 ```
-./createPnf.sh MSS8
+./createPnf.sh 7DEV
 ```
 
 ### sendHeartbeat
@@ -84,16 +86,16 @@ The following example show the usage of this script:
 
 This script send a VES message of domain "fault" to DCAE. It requires three command line parameters:
 
-1. **equipmentType**: Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQ, DWHC] according to document "295672 SDN-R System Requirements".
+1. **equipmentType**: Valid equipment types for 1806 and 1810 are [1234, FYNG, R2D2, 7DEV, nSky, 1OSF] according to document "295672 SDN-R System Requirements".
 
 2. **alarmType**: or alarm name. Any string which references a supported alarm name of the equipment type.
 
-3. **severity**: The severity of tha alarm as defined by [VES schema](./json/schema/CommonEventFormat_28.4.1.json). 
+3. **severity**: The severity of tha alarm as defined by [VES schema](./json/schema/CommonEventFormat_30.1_ONAP.json). 
 
-The following example show the usage of this script. The alarm "lossOfSignal" for equipment type "DWHQ" with severtiy "CRITICAL" will be send.
+The following example show the usage of this script. The alarm "lossOfSignal" for equipment type "nSky" with severtiy "CRITICAL" will be send.
 
 ```
-./sendFault.sh DWHQ lossOfSignal CRITICAL
+./sendFault.sh nSky lossOfSignal CRITICAL
 ```
 
 
@@ -101,23 +103,23 @@ The following example show the usage of this script. The alarm "lossOfSignal" fo
 
 This script send a VES message of domain "thresholdCrossingAlert" to DCAE. It requires three command line parameters:
 
-1. **equipmentType**: Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQ, DWHC] according to document "295672 SDN-R System Requirements".
+1. **equipmentType**: Valid equipment types for 1806 and 1810 are [1234, FYNG, R2D2, 7DEV, nSky, 1OSF] according to document "295672 SDN-R System Requirements".
 
 2. **alarmType**: or alarm name. Any string which references a supported alarm name (TCA) of the equipment type.
 
 3. **alertAction**: The action of TCA as defined by [VES schema](./json/schema/CommonEventFormat_28.4.1.json). 
 
-The following example show the usage of this script. The TCA with name "TCA" for equipment type "6352" with alarmAction "SET" will be send.
+The following example show the usage of this script. The TCA with name "TCA" for equipment type "1234" with alarmAction "SET" will be send.
 
 ```
-./sendTca.sh 6352 TCA SET
+./sendTca.sh 1234 TCA SET
 ```
 
 
 ### send15minPm
 
-This script send a VES message of domain "measurementsForVfScaling" to DCAE. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [6352, MP06, MP20, MSS8, DWHQ, DWHC] according to document "295672 SDN-R System Requirements".
+This script send a VES message of domain "measurementsForVfScaling" to DCAE. The script requires one input parameter. This parameter defines the equipment type. Valid equipment types for 1806 and 1810 are [1234, FYNG, R2D2, 7DEV, nSky, 1OSF] according to document "295672 SDN-R System Requirements".
 
 ```
-./send15minPm.sh MP06
+./send15minPm.sh FYNG
 ```
