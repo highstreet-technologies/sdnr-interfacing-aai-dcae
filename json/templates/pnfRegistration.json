@@ -13,23 +13,25 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
+      "nfNamingCode": "@type@",
+      "nfVendorName": "@vendor@",
+      "timeZoneOffset": "+00:00",
       "version": "4.0.1",
       "vesEventListenerVersion":"7.0.1"
     },
     "pnfRegistrationFields": {
-      "additionalFields": {
-        "eventTime": "@eventTime@",
-        "equipType": "@type@",
-        "vendor":"@vendor@",
-        "model": "@model@"
-      },
-      "lastServiceDate": "09092019",
-      "macAddress": "FF-FF-FF-FF-FF-FF",
-      "manufactureDate": "24032016",
+      "pnfRegistrationFieldsVersion": "2.0",
+      "lastServiceDate":"2019-08-16",
+      "macAddress":"@macAddress@",
+      "manufactureDate":"2019-08-16",
       "modelNumber": "@model@",
       "oamV4IpAddress": "@oamIp@",
       "oamV6IpAddress": "@oamIpV6@",
-      "pnfRegistrationFieldsVersion": "2.0"
+      "serialNumber": "@vendor@-@type@-@oamIp@-@model@",
+      "softwareVersion": "2.3.5",
+      "unitFamily": "@vendor@-@type@",
+      "unitType": "@type@",
+      "vendorName": "@vendor@"
     }
   }
 }

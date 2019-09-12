@@ -13,11 +13,14 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
+      "nfNamingCode": "@type@",
+      "nfVendorName": "@vendor@",
+      "timeZoneOffset": "+00:00",
       "version": "4.0.1",
       "vesEventListenerVersion":"7.0.1"
     },
     "otherFields": {
-      "otherFieldsVersion": 2.0,
+      "otherFieldsVersion": "3.0",
       "nameValuePairs": [
         {
           "name": "pnfVendorName",

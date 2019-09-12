@@ -13,6 +13,9 @@
       "sourceName": "@controllerName@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
+      "nfNamingCode": "@type@",
+      "nfVendorName": "@vendor@",
+      "timeZoneOffset": "+00:00",
       "version": "4.0.1",
       "vesEventListenerVersion":"7.0.1"
     },
