@@ -13,17 +13,15 @@
       "sourceName": "@controllerName@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 3.0
+      "version": "4.0.1",
+      "vesEventListenerVersion":"7.0.1"
     },
     "heartbeatFields": {
-      "heartbeatFieldsVersion": 1.0,
+      "heartbeatFieldsVersion": "3.0",
       "heartbeatInterval": 20,
-      "additionalFields": [
-        {
-          "name": "eventTime",
-          "value": "@eventTime@"
-        }
-      ]
+      "additionalFields": {
+        "eventTime": "@eventTime@"
+      }
     }
   }
 }

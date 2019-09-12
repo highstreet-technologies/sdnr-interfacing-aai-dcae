@@ -13,7 +13,8 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 3.0
+      "version": "4.0.1",
+      "vesEventListenerVersion":"7.0.1"
     },
     "otherFields": {
       "otherFieldsVersion": 2.0,

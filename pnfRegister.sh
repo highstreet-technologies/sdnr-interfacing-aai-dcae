@@ -4,14 +4,7 @@
 
 . config;
       pnfType=${1,,};
-  onapVersion="$2";
-       domain="other";
-
-# exception for controller alarms
-if [ "$onapVersion" == "Casablanca" ]
-  then
-    domain="pnfRegistration";
-fi
+      domain="pnfRegistration";
 
 declare -A mapping=(
     [controllerName]=$(hostname --fqdn)

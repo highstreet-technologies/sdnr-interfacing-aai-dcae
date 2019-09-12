@@ -13,34 +13,23 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 3.0
+      "version": "4.0.1",
+      "vesEventListenerVersion":"7.0.1"
     },
     "faultFields": {
-      "faultFieldsVersion": 2.0,
+      "faultFieldsVersion": "4.0",
       "alarmCondition": "@alarm@",
       "alarmInterfaceA": "@interface@",
       "eventSourceType": "@eventType@",
       "specificProblem": "@alarm@",
       "eventSeverity": "@severity@",
       "vfStatus": "Active",
-      "alarmAdditionalInformation": [
-        {
-          "name": "eventTime",
-          "value": "@eventTime@"
-        },
-        {
-          "name": "equipType",
-          "value": "@type@"
-        },
-        {
-          "name": "vendor",
-          "value": "@vendor@"
-        },
-        {
-          "name": "model",
-          "value": "@model@"
-        }
-      ]
+      "alarmAdditionalInformation": {
+        "eventTime": "@eventTime@",
+        "equipType": "@type@",
+        "vendor":"@vendor@",
+        "model": "@model@"
+      }
     }
   }
 }

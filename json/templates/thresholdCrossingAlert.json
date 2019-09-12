@@ -13,10 +13,11 @@
       "sourceName": "@pnfId@",
       "startEpochMicrosec": "@timestamp@",
       "lastEpochMicrosec": "@timestamp@",
-      "version": 3.0
+      "version": "4.0.1",
+      "vesEventListenerVersion":"7.0.1"
     },
     "thresholdCrossingAlertFields": {
-      "thresholdCrossingFieldsVersion": 2.0,
+      "thresholdCrossingFieldsVersion": "4.0",
       "additionalParameters": [],
       "alertAction": "@action@",
       "alertDescription": "TCA",
@@ -31,24 +32,12 @@
       "interfaceName":"@interface@",
       "networkService":"",
       "possibleRootCause":"",
-      "additionalFields": [
-        {
-          "name": "eventTime",
-          "value": "@eventTime@"
-        },
-        {
-          "name": "equipType",
-          "value": "@type@"
-        },
-        {
-          "name": "vendor",
-          "value": "@vendor@"
-        },
-        {
-          "name": "model",
-          "value": "@model@"
-        }
-      ]
+      "additionalFields": {
+        "eventTime": "@eventTime@",
+        "equipType": "@type@",
+        "vendor":"@vendor@",
+        "model": "@model@"
+      }
     }
   }
 }

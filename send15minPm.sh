@@ -4,7 +4,7 @@
    
 . config;
              pnfType=${1,,};
-              domain="measurementsForVfScaling";
+              domain="measurement";
    collectionEndTime=$(( $timeInS - $(($timeInS % 900))));
  collectionStartTime=$(( collectionEndTime - 900 ));
          granularity="PM15min";
