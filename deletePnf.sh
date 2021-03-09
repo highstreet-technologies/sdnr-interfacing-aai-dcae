@@ -48,4 +48,4 @@ done
 echo;
 
 # curl -i -k -E $crt --key $key -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: SDNR' -H 'X-TransactionId: 9999' $urlAai/aai/v8/network/pnfs
-./jcurl.sh -v -k -p12 $aaiSslKey $aaiSslKeyPsswd -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: $aaiAppId' -H 'X-TransactionId: 9999' $aaiUri/network/pnfs/pnf/${pnfIdByType[$pnfType]}/?resource-version=$2"
+curl -v -k -p12 $aaiSslKey $aaiSslKeyPsswd -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-FromAppId: $aaiAppId' -H 'X-TransactionId: 9999' $aaiUri/network/pnfs/pnf/${pnfIdByType[$pnfType]}/?resource-version=$2"
